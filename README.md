@@ -12,7 +12,7 @@ spring学习笔记
 # 仓库目录
 
 - [helloworld](/helloworld):一个简单的小例子
-
+- [spring-ioc](/spring-ioc):一些测试ioc的小例子
 
 -----	
 

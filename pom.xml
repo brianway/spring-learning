@@ -46,6 +46,7 @@
     <modules>
 
         <module>helloworld</module>
+        <module>spring-ioc</module>
     </modules>
 
     <dependencyManagement>
