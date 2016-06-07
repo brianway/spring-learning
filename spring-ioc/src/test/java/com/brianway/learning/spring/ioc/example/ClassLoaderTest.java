@@ -8,7 +8,7 @@ import static org.junit.Assert.*;
  * 类加载器测试
  * 测试当前线程的类加载器以及父加载器
  */
-public class TestClassLoader {
+public class ClassLoaderTest {
     @Test
     public void testClassLoader(){
         ClassLoader loader = Thread.currentThread().getContextClassLoader();

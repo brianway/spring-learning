@@ -9,7 +9,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 /**
  * Created by Brian on 2016/5/12.
  */
-public class TestBeanFactory {
+public class BeanFactoryTest {
 
     /**
      * Springs XmlBeanFactory is deprecated

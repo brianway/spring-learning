@@ -8,7 +8,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  * Created by Brian on 2016/5/12.
  * IOC示例测试
  */
-public class TestMoAttack {
+public class MoAttackTest {
 
     @Test
     public void show(){

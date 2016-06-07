@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+         http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="car" class="com.brianway.learning.spring.ioc.attr.Car" lazy-init="default">
+		<property name="brand">
+			<value>
+				<![CDATA[红旗&CA72]]>
+			</value>
+		</property>
+		<property name="maxSpeed" value="200"/>
+		<property name="price" value="2000.00" />
+	</bean>
+
+	<bean id="parentBoss" abstract="true"
+		class="com.brianway.learning.spring.ioc.attr.Boss">
+		<property name="favorites">
+			<set>
+				<value>看报</value>
+				<value>赛车</value>
+				<value>高尔夫</value>
+			</set>
+		</property>
+	</bean>
+
+	<bean id="childBoss" parent="parentBoss">
+		<property name="favorites">
+			<set merge="true">
+				<value>爬山</value>
+				<value>游泳</value>
+			</set>
+		</property>
+	</bean>	
+	
+
+	<!-- 引用Bean -->
+	<bean id="boss1" class="com.brianway.learning.spring.ioc.attr.Boss">
+		<property name="car" ref="car" />
+		<!-- set -->
+		<property name="favorites">
+			<!-- list>
+				<value>看报</value>
+				<value>赛车</value>
+				<value>高尔夫</value>
+			</list -->
+			<set>
+				<value>看报</value>
+				<value>赛车</value>
+				<value>高尔夫</value>
+			</set>
+		</property>
+		<!-- map -->
+		<property name="jobs">
+			<map>
+				<entry key="AM" value="会见客户"/>
+				<entry key="PM" value="公司内部会议"/>
+			</map>
+		</property>
+		<!-- properties -->
+		<property name="mails">
+			<props>
+				<prop key="jobMail">john-office@baobaotao.com</prop>
+				<prop key="lifeMail">john-life@baobaotao.com</prop>
+			</props>
+		</property>
+		<!-- 强类型集合 -->
+		<property name="jobTime">
+			<map>
+				<entry key="会见客户" value="124"/>
+			</map>
+		</property>
+	</bean>
+
+	<!-- 内部Bean -->
+	<bean id="boss2" class="com.brianway.learning.spring.ioc.attr.Boss">
+		<property name="car">
+			<bean class="com.brianway.learning.spring.ioc.attr.Car">
+				<property name="maxSpeed" value="202" />
+				<property name="price" value="2002.00" />
+			</bean>
+		</property>
+	</bean>
+
+
+<!--
+	<bean id="sportsCar" class="com.brianway.learning.spring.ioc.attr.SportsCar">
+		<property name="brand">
+			<bean id="car.brand"
+				class="org.springframework.beans.factory.config.PropertyPathFactoryBean">
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="brand"
+		class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+		<property name="targetObject">
+			<ref local="car" />
+		</property>
+		<property name="targetMethod" value="getBrand"/>
+	</bean>
+
+	<bean id="myField"
+		class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean">
+		<property name="staticField"
+			value="com.brianway.learning.spring.ioc.attr.Car.HONG_QI" />
+		<property name="targetObject" ref="car"/>
+		<property name="targetField" value="brand"/>
+	</bean>
+-->
+
+
+</beans>

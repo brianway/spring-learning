@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+         http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="car" class="com.brianway.learning.spring.ioc.attr.Car">
+		<property name="brand" value="吉利CT5" />
+		<property name="maxSpeed" value="100" />
+		<property name="price" value="1000.00" />
+	</bean>
+	<bean id="boss" class="com.brianway.learning.spring.ioc.attr.Boss">
+		<property name="car">
+			<ref parent="car" />
+		</property>
+	</bean>
+</beans>

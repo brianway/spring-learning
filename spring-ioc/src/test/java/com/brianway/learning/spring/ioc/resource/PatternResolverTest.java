@@ -10,7 +10,7 @@ import org.springframework.core.io.support.ResourcePatternResolver;
  *
  * 资源加载器
  */
-public class TestPatternResolver {
+public class PatternResolverTest {
     @Test
     public void test() throws Throwable{
         ResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
