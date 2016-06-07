@@ -6,6 +6,9 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  * Created by Brian on 2016/5/13.
+ * 该类装载的Bean的xml配置文件:beanfactory/beans-ApplicationContext.xml
+ * 自动识别和注册MyBeanPostProcessor和MyInstantiationAwareBeanPostProcessor,并应用到上下文
+ *
  */
 public class BeanLifeCycle {
     private static void LifeCycleInBeanFactory(){

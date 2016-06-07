@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * Created by Brian on 2016/5/12.
+ * 依带注解的java类提供配置信息
  */
 //配置信息提供类
 @Configuration

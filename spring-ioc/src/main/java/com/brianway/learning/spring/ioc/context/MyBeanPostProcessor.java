@@ -6,6 +6,7 @@ import org.springframework.beans.factory.config.BeanPostProcessor;
 
 /**
  * Created by Brian on 2016/5/13.
+ *
  */
 public class MyBeanPostProcessor implements BeanPostProcessor{
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {

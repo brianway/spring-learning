@@ -19,7 +19,7 @@ import java.io.InputStream;
 public class FileSourceExample {
     public static void main(String[] args) {
         try {
-            String filePath = "G:\\mygit\\spring-learning\\spring-ioc\\src\\main\\resources\\example\\file1.txt";
+            String filePath = "/Users/brian/mygit/spring-learning/spring-ioc/src/main/java/com/brianway/learning/spring/ioc/resource/FileSourceExample.java";
 
             //使用系统文件路径加载方式
             Resource resource1 = new FileSystemResource(filePath);

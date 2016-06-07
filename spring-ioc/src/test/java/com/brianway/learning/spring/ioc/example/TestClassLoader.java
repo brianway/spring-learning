@@ -5,6 +5,8 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 /**
  * Created by Brian on 2016/5/12.
+ * 类加载器测试
+ * 测试当前线程的类加载器以及父加载器
  */
 public class TestClassLoader {
     @Test

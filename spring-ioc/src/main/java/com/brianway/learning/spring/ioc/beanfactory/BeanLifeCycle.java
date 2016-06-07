@@ -8,6 +8,9 @@ import org.springframework.core.io.Resource;
 
 /**
  * Created by Brian on 2016/5/13.
+ * 该类装载的Bean的xml配置文件:beanfactory/beans-BeanFactory.xml
+ * 分别注册两个后处理器:MyBeanPostProcessor和MyInstantiationAwareBeanPostProcessor
+ * (后处理器的实际调用顺序和注册顺序无关)
  */
 public class BeanLifeCycle {
     private static void LifeCycleInBeanFactory(){

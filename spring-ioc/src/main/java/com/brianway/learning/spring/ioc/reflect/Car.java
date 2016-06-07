@@ -2,6 +2,7 @@ package com.brianway.learning.spring.ioc.reflect;
 
 /**
  * Created by Brian on 2016/5/12.
+ * 一个基本的Car类
  */
 public class Car {
     private String brand;
