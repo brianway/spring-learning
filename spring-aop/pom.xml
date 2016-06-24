@@ -9,8 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring-ioc</artifactId>
-
+    <artifactId>spring-aop</artifactId>
 
     <dependencies>
         <dependency>
@@ -34,6 +33,10 @@
             <artifactId>spring-beans</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aspects</artifactId>
+        </dependency>
 
         <!-- database -->
         <dependency>
@@ -59,14 +62,11 @@
             <artifactId>slf4j-api</artifactId>
         </dependency>
 
-
-        <!-- apache common-->
+        <!-- cglib -->
         <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
+            <groupId>cglib</groupId>
+            <artifactId>cglib</artifactId>
         </dependency>
 
     </dependencies>
-
-
 </project>
