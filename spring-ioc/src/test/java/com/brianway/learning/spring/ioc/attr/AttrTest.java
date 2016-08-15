@@ -13,10 +13,10 @@ public class AttrTest {
     @Test
     public void referParent() {
         //父容器
-        ClassPathXmlApplicationContext pFactory = new ClassPathXmlApplicationContext(new String[]{"com/brianway/learning/spring/ioc/attr/beans1.xml"});
+        ClassPathXmlApplicationContext pFactory = new ClassPathXmlApplicationContext(new String[] {"com/brianway/learning/spring/ioc/attr/beans1.xml"});
         //指定pFacroty为该容器的父容器
         ApplicationContext factory = new ClassPathXmlApplicationContext(
-                new String[]{"com/brianway/learning/spring/ioc/attr/beans2.xml"},
+                new String[] {"com/brianway/learning/spring/ioc/attr/beans2.xml"},
                 pFactory
         );
         Boss boss = (Boss) factory.getBean("boss");

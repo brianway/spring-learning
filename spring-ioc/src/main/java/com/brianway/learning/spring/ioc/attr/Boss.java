@@ -24,7 +24,6 @@ public class Boss {
         this.name = name;
     }
 
-
     public int getAge() {
         return age;
     }
@@ -81,7 +80,6 @@ public class Boss {
     public void setFavorites(Set favorites) {
         this.favorites = favorites;
     }
-
 
     //	private List favorites = new ArrayList();
     //

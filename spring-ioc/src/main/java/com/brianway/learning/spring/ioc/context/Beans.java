@@ -22,5 +22,4 @@ public class Beans {
         return car;
     }
 
-
 }

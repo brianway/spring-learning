@@ -18,5 +18,4 @@
         <property name="age" value="45"/>
     </bean>
 
-
 </beans>

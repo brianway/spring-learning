@@ -1,6 +1,5 @@
 package com.brianway.learning.spring.ioc.example;
 
-
 import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 

@@ -14,7 +14,6 @@ public class BeanLifeCycle {
         //装载配置文件并启动容器
         ApplicationContext context = new ClassPathXmlApplicationContext("beanfactory/beans-ApplicationContext.xml");
 
-
         //第一次从容器中获取car，将触发容器实例化该Bean,这将引发Bean生命周期方法调用
         Car car1 = (Car) context.getBean("car");
         car1.introduce();

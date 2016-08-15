@@ -25,7 +25,6 @@ public class Car implements BeanFactoryAware, BeanNameAware, InitializingBean, D
         this.brand = brand;
     }
 
-
     public void introduce() {
         System.out.println("brand:" + brand + ";color:" + color + ";maxSpeed:" + maxSpeed);
     }
@@ -46,7 +45,6 @@ public class Car implements BeanFactoryAware, BeanNameAware, InitializingBean, D
     public void destroy() throws Exception {
         System.out.println("调用DisposableBean.destroy()");
     }
-
 
     //InitializingBean接口
     public void afterPropertiesSet() throws Exception {

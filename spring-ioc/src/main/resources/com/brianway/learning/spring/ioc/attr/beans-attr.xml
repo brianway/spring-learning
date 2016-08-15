@@ -34,7 +34,6 @@
         </property>
     </bean>
 
-
     <!-- 引用Bean -->
     <bean id="boss1" class="com.brianway.learning.spring.ioc.attr.Boss">
         <property name="car" ref="car"/>
@@ -83,7 +82,6 @@
         </property>
     </bean>
 
-
     <!--
         <bean id="sportsCar" class="com.brianway.learning.spring.ioc.attr.SportsCar">
             <property name="brand">
@@ -109,6 +107,5 @@
             <property name="targetField" value="brand"/>
         </bean>
     -->
-
 
 </beans>

@@ -17,7 +17,6 @@
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
 
-
     <!-- springmvc 前端控制器  -->
     <servlet>
         <servlet-name>helloworld</servlet-name>
@@ -29,7 +28,6 @@
         <servlet-name>helloworld</servlet-name>
         <url-pattern>*.html</url-pattern>
     </servlet-mapping>
-
 
     <welcome-file-list>
         <welcome-file>index.html</welcome-file>

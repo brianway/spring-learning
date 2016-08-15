@@ -13,12 +13,10 @@
          http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
    ">
 
-
     <!-- 扫描类包,将Spring注解的类自动转换Bean -->
     <context:component-scan base-package="com.brianway.learning.spring.helloworld.dao"/>
     <!-- 扫描service类包，应用Spring的注解配置-->
     <context:component-scan base-package="com.brianway.learning.spring.helloworld.service"/>
-
 
     <!-- 定义一个使用DBCP实现的数据源 -->
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"

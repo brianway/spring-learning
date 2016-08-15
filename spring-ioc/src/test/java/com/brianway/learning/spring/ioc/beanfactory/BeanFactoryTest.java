@@ -5,7 +5,6 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-
 /**
  * Created by Brian on 2016/5/12.
  */
@@ -21,6 +20,5 @@ public class BeanFactoryTest {
         Car car = (Car) context.getBean("car1");
         car.introduce();
     }
-
 
 }

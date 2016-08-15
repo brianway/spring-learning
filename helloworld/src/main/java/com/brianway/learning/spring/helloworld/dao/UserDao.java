@@ -31,7 +31,7 @@ public class UserDao {
     public User findUserByUserName(final String userName) {
         String sqlStr = "SELECT user_id,user_name,credits FROM t_user WHERE user_name = ?";
         final User user = new User();
-        jdbcTemplate.query(sqlStr, new Object[]{userName},
+        jdbcTemplate.query(sqlStr, new Object[] {userName},
                 new RowCallbackHandler() {
                     public void processRow(ResultSet resultSet) throws SQLException {
                         user.setUserId(resultSet.getInt("user_id"));

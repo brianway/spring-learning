@@ -23,5 +23,4 @@ public class CarFactory {
         return car;
     }
 
-
 }

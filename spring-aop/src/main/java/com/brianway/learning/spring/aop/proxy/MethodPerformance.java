@@ -22,5 +22,4 @@ public class MethodPerformance {
         System.out.println(serviceMethod + "花费" + elapse + "毫秒");
     }
 
-
 }

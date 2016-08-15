@@ -17,5 +17,4 @@
 
     <bean id="myBeanFactotyPostProcessor" class="com.brianway.learning.spring.ioc.context.MyBeanFactoryPostProcessor"/>
 
-
 </beans>

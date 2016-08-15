@@ -11,7 +11,6 @@
 
     <artifactId>spring-ioc</artifactId>
 
-
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
@@ -34,7 +33,6 @@
             <artifactId>spring-beans</artifactId>
         </dependency>
 
-
         <!-- database -->
         <dependency>
             <groupId>mysql</groupId>
@@ -45,7 +43,6 @@
             <groupId>commons-dbcp</groupId>
             <artifactId>commons-dbcp</artifactId>
         </dependency>
-
 
         <!--  log  -->
 
@@ -59,7 +56,6 @@
             <artifactId>slf4j-api</artifactId>
         </dependency>
 
-
         <!-- apache common-->
         <dependency>
             <groupId>org.apache.commons</groupId>
@@ -67,6 +63,5 @@
         </dependency>
 
     </dependencies>
-
 
 </project>

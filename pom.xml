@@ -109,7 +109,6 @@
                 <version>${spring.version}</version>
             </dependency>
 
-
             <!-- mybatis -->
             <dependency>
                 <groupId>org.mybatis</groupId>
@@ -135,7 +134,6 @@
                 <version>1.4</version>
             </dependency>
 
-
             <!--  log  -->
             <dependency>
                 <groupId>log4j</groupId>
@@ -149,7 +147,6 @@
                 <version>1.7.18</version>
             </dependency>
 
-
             <!-- JSP tag -->
             <dependency>
                 <groupId>javax.servlet</groupId>
@@ -161,7 +158,6 @@
                 <artifactId>standard</artifactId>
                 <version>1.1.2</version>
             </dependency>
-
 
             <!-- hibernate 校验 -->
             <dependency>

@@ -5,7 +5,6 @@ public class Boss {
     private Car car;
     private Office office;
 
-
     public Boss() {
 
     }
@@ -20,7 +19,6 @@ public class Boss {
         this.name = name;
         this.car = car;
     }
-
 
     public String getName() {
         return name;

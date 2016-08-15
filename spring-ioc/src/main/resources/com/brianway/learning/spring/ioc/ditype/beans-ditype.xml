@@ -23,12 +23,10 @@
     <bean id="boss" class="com.brianway.learning.spring.ioc.ditype.Boss"
           p:car-ref="car"/>
 
-
     <bean id="car2" class="com.brianway.learning.spring.ioc.ditype.Car"
           p:brand="红旗&amp;CA72-2"
           p:maxSpeed="200"
           p:price="20000"/>
-
 
     <bean id="boss2" class="com.brianway.learning.spring.ioc.ditype.Boss">
         <property name="name" value="John-2"/>
@@ -50,7 +48,6 @@
         <constructor-arg index="2" value="20000" />
     </bean>
     -->
-
 
     <!--构造函数注入：type&index -->
     <bean id="car3" class="com.brianway.learning.spring.ioc.ditype.Car">
@@ -82,6 +79,5 @@
 
     <bean id="car6" class="com.brianway.learning.spring.ioc.ditype.CarFactory"
           factory-method="createCar"/>
-
 
 </beans>

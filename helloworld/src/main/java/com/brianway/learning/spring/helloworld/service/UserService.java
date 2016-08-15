@@ -19,7 +19,6 @@ public class UserService {
     @Autowired
     private LoginLogDao loginLogDao;
 
-
     public boolean hasMatchUser(String userName, String password) {
         int matchCount = userDao.getMatchCount(userName, password);
         return matchCount > 0;
@@ -38,6 +37,5 @@ public class UserService {
         userDao.updateLoginInfo(user);
         loginLogDao.insertLoginLog(loginLog);
     }
-
 
 }

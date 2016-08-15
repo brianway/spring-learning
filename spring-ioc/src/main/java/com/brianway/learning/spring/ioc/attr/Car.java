@@ -1,6 +1,5 @@
 package com.brianway.learning.spring.ioc.attr;
 
-
 /**
  * attr包下的Car类
  */
