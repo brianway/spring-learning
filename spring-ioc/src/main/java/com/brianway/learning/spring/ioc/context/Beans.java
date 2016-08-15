@@ -15,7 +15,7 @@ public class Beans {
 
     //定义一个Bean
     @Bean(name = "car")
-    public Car buildCar(){
+    public Car buildCar() {
         Car car = new Car();
         car.setBrand("宝马");
         car.setMaxSpeed(100);

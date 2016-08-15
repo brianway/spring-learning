@@ -12,7 +12,7 @@ public class ForumServiceTest {
      * 测试拥有监控能力的ForumServiceImplWithMonitor业务方法
      */
     @Test
-    public void testWithMonitor(){
+    public void testWithMonitor() {
         ForumService forumService = new ForumServiceImplWithMonitor();
         forumService.removeForum(10);
         forumService.removeTopic(1012);
@@ -22,7 +22,7 @@ public class ForumServiceTest {
      * 测试使用JDK动态代理实现的AOP
      */
     @Test
-    public void testWithJDK(){
+    public void testWithJDK() {
         //希望被代理的目标业务类
         ForumService target = new ForumServiceImpl();
 
@@ -43,7 +43,7 @@ public class ForumServiceTest {
      * 测试使用CGLib动态代理实现的AOP
      */
     @Test
-    public void testWithCGLib(){
+    public void testWithCGLib() {
         CglibProxy proxy = new CglibProxy();
         ForumServiceImpl forumService = (ForumServiceImpl) proxy.getProxy(ForumServiceImpl.class);
         forumService.removeForum(10);

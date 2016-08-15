@@ -13,6 +13,6 @@
     <title>helloworld</title>
 </head>
 <body>
-    ${user.userName},欢迎进入，当前您的积分为${user.credits};
+${user.userName},欢迎进入，当前您的积分为${user.credits};
 </body>
 </html>

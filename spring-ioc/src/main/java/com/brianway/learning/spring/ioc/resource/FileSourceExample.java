@@ -30,8 +30,8 @@ public class FileSourceExample {
             InputStream is1 = resource1.getInputStream();
             InputStream is2 = resource2.getInputStream();
 
-            System.out.println("res1:"+resource1.getFilename());
-            System.out.println("res2:"+resource2.getFilename());
+            System.out.println("res1:" + resource1.getFilename());
+            System.out.println("res2:" + resource2.getFilename());
 
         } catch (IOException e) {
             e.printStackTrace();

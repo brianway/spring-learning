@@ -7,15 +7,15 @@ import org.springframework.core.io.support.ResourcePatternResolver;
 
 /**
  * Created by Brian on 2016/5/12.
- *
+ * <p>
  * 资源加载器
  */
 public class PatternResolverTest {
     @Test
-    public void test() throws Throwable{
+    public void test() throws Throwable {
         ResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
         Resource resources[] = resolver.getResources("classpath*:example/**/*.xml");
-        for (Resource resource:resources){
+        for (Resource resource : resources) {
             System.out.println(resource.getDescription());
             System.out.println(resource.getFilename());
         }

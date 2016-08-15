@@ -11,12 +11,12 @@ public class PrivateCarReflect {
     public static void main(String[] args) throws Throwable {
         ClassLoader loader = Thread.currentThread().getContextClassLoader();
         Class clazz = loader.loadClass("com.brianway.learning.spring.ioc.reflect.PrivateCar");
-        PrivateCar privateCar =(PrivateCar)clazz.newInstance();
+        PrivateCar privateCar = (PrivateCar) clazz.newInstance();
 
         Field colorFld = clazz.getDeclaredField("color");
         //取消语言检查访问private方法
         colorFld.setAccessible(true);
-        colorFld.set(privateCar,"红色");
+        colorFld.set(privateCar, "红色");
 
         Method driveMtd = clazz.getDeclaredMethod("drive");
         //取消语言检查访问protected方法

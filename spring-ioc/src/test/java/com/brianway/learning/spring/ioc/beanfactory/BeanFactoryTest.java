@@ -16,7 +16,7 @@ public class BeanFactoryTest {
      * http://stackoverflow.com/questions/5231371/springs-xmlbeanfactory-is-deprecated
      */
     @Test
-    public void testApplicationContext(){
+    public void testApplicationContext() {
         ApplicationContext context = new ClassPathXmlApplicationContext("beanfactory/beans.xml");
         Car car = (Car) context.getBean("car1");
         car.introduce();

@@ -6,7 +6,7 @@
        http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="car1" class="com.brianway.learning.spring.ioc.reflect.Car"
-        p:brand="红旗CA72"
+          p:brand="红旗CA72"
           p:color="黑色"
           p:maxSpeed="200"
     />

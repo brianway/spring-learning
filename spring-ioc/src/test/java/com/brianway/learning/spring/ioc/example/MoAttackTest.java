@@ -11,9 +11,9 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class MoAttackTest {
 
     @Test
-    public void show(){
+    public void show() {
         ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("example/beans.xml");
-        MoAttack moAttack =(MoAttack) ctx.getBean("moAttack");
+        MoAttack moAttack = (MoAttack) ctx.getBean("moAttack");
         moAttack.cityGateAsk();
 
     }

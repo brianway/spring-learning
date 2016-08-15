@@ -10,23 +10,23 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class DitypeTest {
 
     @Test
-    public void listCars(){
+    public void listCars() {
         ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("com/brianway/learning/spring/ioc/ditype/beans-ditype.xml");
         int count = 7;
         Car[] cars = new Car[count];
-        for(int i=0;i<count;i++){
-            cars[i] = (Car) ctx.getBean("car"+(i>0?i:""));
+        for (int i = 0; i < count; i++) {
+            cars[i] = (Car) ctx.getBean("car" + (i > 0 ? i : ""));
             System.out.println(cars[i]);
         }
     }
 
     @Test
-    public void listBosses(){
+    public void listBosses() {
         ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("com/brianway/learning/spring/ioc/ditype/beans-ditype.xml");
         int count = 3;
         Boss[] bosses = new Boss[count];
-        for(int i=0;i<count;i++){
-            bosses[i] = (Boss) ctx.getBean("boss"+(i>0?i:""));
+        for (int i = 0; i < count; i++) {
+            bosses[i] = (Boss) ctx.getBean("boss" + (i > 0 ? i : ""));
             System.out.println(bosses[i]);
         }
     }

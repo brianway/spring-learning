@@ -10,8 +10,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  */
 public class AnnotationTest {
     @Test
-    public void testBeanLife(){
+    public void testBeanLife() {
         ApplicationContext ctx = new ClassPathXmlApplicationContext("com/brianway/learning/spring/ioc/annotation/beans-annotation.xml");
-        ((ClassPathXmlApplicationContext)ctx).destroy();
+        ((ClassPathXmlApplicationContext) ctx).destroy();
     }
 }

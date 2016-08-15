@@ -13,6 +13,7 @@ public class MailSender implements ApplicationContextAware {
 
     /**
      * ApplicationContextAware的接口方法,以便容器启动时注入容器实例
+     *
      * @param applicationContext
      * @throws BeansException
      */
@@ -20,9 +21,9 @@ public class MailSender implements ApplicationContextAware {
         this.ctx = applicationContext;
     }
 
-    public void sendMail(String to){
+    public void sendMail(String to) {
         System.out.println("MailSender:模拟发送邮件");
-        MailSendEvent mse = new MailSendEvent(this.ctx,to);
+        MailSendEvent mse = new MailSendEvent(this.ctx, to);
         //向容器中的所有事件监听器发送事件
         ctx.publishEvent(mse);
 

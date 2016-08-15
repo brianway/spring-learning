@@ -18,8 +18,8 @@ public class Car {
         this.maxSpeed = maxSpeed;
     }
 
-    public void introduce(){
-        System.out.println("brand:"+brand+";color:"+color+";maxSpeed:"+maxSpeed);
+    public void introduce() {
+        System.out.println("brand:" + brand + ";color:" + color + ";maxSpeed:" + maxSpeed);
     }
 
     public String getColor() {

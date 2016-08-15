@@ -12,7 +12,7 @@ import java.sql.Connection;
  */
 public class PlaceHolderTest {
     @Test
-    public void testPlaceHolder() throws Exception{
+    public void testPlaceHolder() throws Exception {
         String resourceFile = "com/brianway/learning/spring/ioc/placeholder/beans-placeholder.xml";
         ApplicationContext ctx = new ClassPathXmlApplicationContext(resourceFile);
         DataSource ds = ctx.getBean(DataSource.class);

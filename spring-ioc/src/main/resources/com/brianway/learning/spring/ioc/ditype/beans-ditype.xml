@@ -1,87 +1,87 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-	xmlns:p="http://www.springframework.org/schema/p"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
          http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
-	<!-- 属性注入 复杂版 -->
-	<!--bean id="car" class="com.brianway.learning.spring.ioc.ditype.Car">
-		<property name="brand" value="红旗&amp;CA72"/>
-		<property name="maxSpeed" value="200"/>
-		<property name="price" value="20000.00"/>
-	</bean>
-	<bean id="boss" class="com.brianway.learning.spring.ioc.ditype.Boss">
-		<property name="car" ref="car"/>
-	</bean-->
+    <!-- 属性注入 复杂版 -->
+    <!--bean id="car" class="com.brianway.learning.spring.ioc.ditype.Car">
+        <property name="brand" value="红旗&amp;CA72"/>
+        <property name="maxSpeed" value="200"/>
+        <property name="price" value="20000.00"/>
+    </bean>
+    <bean id="boss" class="com.brianway.learning.spring.ioc.ditype.Boss">
+        <property name="car" ref="car"/>
+    </bean-->
 
-	<!--属性注入 简化版 使用p命名空间 -->
+    <!--属性注入 简化版 使用p命名空间 -->
     <bean id="car" class="com.brianway.learning.spring.ioc.ditype.Car"
-      p:brand="红旗&amp;CA72"
-      p:maxSpeed="200"
-      p:price="20000.00"/>
+          p:brand="红旗&amp;CA72"
+          p:maxSpeed="200"
+          p:price="20000.00"/>
 
-	<bean id="boss" class="com.brianway.learning.spring.ioc.ditype.Boss"
-	  p:car-ref="car"/>
-
-     
-	<bean id="car2" class="com.brianway.learning.spring.ioc.ditype.Car"
-		  p:brand="红旗&amp;CA72-2"
-		  p:maxSpeed="200"
-		  p:price="20000" />
+    <bean id="boss" class="com.brianway.learning.spring.ioc.ditype.Boss"
+          p:car-ref="car"/>
 
 
-	<bean id="boss2" class="com.brianway.learning.spring.ioc.ditype.Boss">
-		<property name="name" value="John-2"/>
-		<property name="car" >
-			<ref local="car"/>
-		</property>
-	</bean>
-
-	<!--构造函数注入：type -->
-	<bean id="car1" class="com.brianway.learning.spring.ioc.ditype.Car">
-		<constructor-arg type="java.lang.String" value="红旗CA72-1"/>
-		<constructor-arg type="double" value="20000"/>
-	</bean>
-
-	<!--	构造函数注入：index ,索引从0开始
-	<bean id="car2" class="com.brianway.learning.spring.ioc.ditype.Car">
-		<constructor-arg index="0" value="红旗CA72" />
-		<constructor-arg index="1" value="中国一汽" />
-		<constructor-arg index="2" value="20000" />
-	</bean>
-	-->
+    <bean id="car2" class="com.brianway.learning.spring.ioc.ditype.Car"
+          p:brand="红旗&amp;CA72-2"
+          p:maxSpeed="200"
+          p:price="20000"/>
 
 
-	<!--构造函数注入：type&index -->
-	<bean id="car3" class="com.brianway.learning.spring.ioc.ditype.Car">
-		<constructor-arg index="0" type="java.lang.String" value="红旗CA72-3"/>
-		<constructor-arg index="1" type="java.lang.String" value="中国一汽"/>
-		<constructor-arg index="2" type="int" value="200"/>
-	</bean>
+    <bean id="boss2" class="com.brianway.learning.spring.ioc.ditype.Boss">
+        <property name="name" value="John-2"/>
+        <property name="car">
+            <ref local="car"/>
+        </property>
+    </bean>
 
-	<bean id="car4" class="com.brianway.learning.spring.ioc.ditype.Car">
-		<constructor-arg index="0" value="红旗CA72-4"/>
-		<constructor-arg index="1" value="中国一汽"/>
-		<constructor-arg index="2" type="int" value="200"/>
-	</bean>
+    <!--构造函数注入：type -->
+    <bean id="car1" class="com.brianway.learning.spring.ioc.ditype.Car">
+        <constructor-arg type="java.lang.String" value="红旗CA72-1"/>
+        <constructor-arg type="double" value="20000"/>
+    </bean>
 
-	<!--构造函数注入：自动识别入参类型 -->
-	<bean id="boss1" class="com.brianway.learning.spring.ioc.ditype.Boss">
-		<constructor-arg value="John-1"/>
-		<constructor-arg ref="car"/>
-		<constructor-arg ref="office"/>
-	</bean>
+    <!--	构造函数注入：index ,索引从0开始
+    <bean id="car2" class="com.brianway.learning.spring.ioc.ditype.Car">
+        <constructor-arg index="0" value="红旗CA72" />
+        <constructor-arg index="1" value="中国一汽" />
+        <constructor-arg index="2" value="20000" />
+    </bean>
+    -->
 
-	<bean id="office" class="com.brianway.learning.spring.ioc.ditype.Office" />
 
-	<!-- 工厂方法-->
-	<!-- 工厂类Bean-->
-	<bean id="carFactory" class="com.brianway.learning.spring.ioc.ditype.CarFactory" />
+    <!--构造函数注入：type&index -->
+    <bean id="car3" class="com.brianway.learning.spring.ioc.ditype.Car">
+        <constructor-arg index="0" type="java.lang.String" value="红旗CA72-3"/>
+        <constructor-arg index="1" type="java.lang.String" value="中国一汽"/>
+        <constructor-arg index="2" type="int" value="200"/>
+    </bean>
 
-	<bean id="car5" factory-bean="carFactory" factory-method="createHongQiCar"/>
+    <bean id="car4" class="com.brianway.learning.spring.ioc.ditype.Car">
+        <constructor-arg index="0" value="红旗CA72-4"/>
+        <constructor-arg index="1" value="中国一汽"/>
+        <constructor-arg index="2" type="int" value="200"/>
+    </bean>
 
-	<bean id="car6" class="com.brianway.learning.spring.ioc.ditype.CarFactory"
-		factory-method="createCar"/>
+    <!--构造函数注入：自动识别入参类型 -->
+    <bean id="boss1" class="com.brianway.learning.spring.ioc.ditype.Boss">
+        <constructor-arg value="John-1"/>
+        <constructor-arg ref="car"/>
+        <constructor-arg ref="office"/>
+    </bean>
+
+    <bean id="office" class="com.brianway.learning.spring.ioc.ditype.Office"/>
+
+    <!-- 工厂方法-->
+    <!-- 工厂类Bean-->
+    <bean id="carFactory" class="com.brianway.learning.spring.ioc.ditype.CarFactory"/>
+
+    <bean id="car5" factory-bean="carFactory" factory-method="createHongQiCar"/>
+
+    <bean id="car6" class="com.brianway.learning.spring.ioc.ditype.CarFactory"
+          factory-method="createCar"/>
 
 
 </beans>

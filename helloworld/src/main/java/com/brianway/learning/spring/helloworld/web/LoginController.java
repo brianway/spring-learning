@@ -20,21 +20,21 @@ public class LoginController {
     private UserService userService;
 
     @RequestMapping(value = "/index.html")
-    public String loginPage(){
+    public String loginPage() {
         return "login";
     }
 
     @RequestMapping(value = "/loginCheck.html")
-    public ModelAndView loginCheck(HttpServletRequest request,LoginCommand loginCommand){
-        boolean isValidUser = userService.hasMatchUser(loginCommand.getUserName(),loginCommand.getPassword());
-        if(!isValidUser){
-            return new ModelAndView("login","error","用户名或者密码错误");
-        }else{
+    public ModelAndView loginCheck(HttpServletRequest request, LoginCommand loginCommand) {
+        boolean isValidUser = userService.hasMatchUser(loginCommand.getUserName(), loginCommand.getPassword());
+        if (!isValidUser) {
+            return new ModelAndView("login", "error", "用户名或者密码错误");
+        } else {
             User user = userService.findUserByUserName(loginCommand.getUserName());
             user.setLastIp(request.getRemoteAddr());
             user.setLastVisit(new Date());
             userService.loginSuccess(user);
-            request.getSession().setAttribute("user",user);
+            request.getSession().setAttribute("user", user);
             return new ModelAndView("main");
         }
     }

@@ -7,7 +7,7 @@ import org.springframework.beans.factory.*;
  * Created by Brian on 2016/5/13.
  * 实现各种生命周期控制访问的Car类
  */
-public class Car implements BeanFactoryAware,BeanNameAware,InitializingBean,DisposableBean{
+public class Car implements BeanFactoryAware, BeanNameAware, InitializingBean, DisposableBean {
 
     private String brand;
     private String color;
@@ -16,7 +16,7 @@ public class Car implements BeanFactoryAware,BeanNameAware,InitializingBean,Disp
     private BeanFactory beanFactory;
     private String beanName;
 
-    public Car(){
+    public Car() {
         System.out.println("调用Car()构造函数");
     }
 
@@ -26,8 +26,8 @@ public class Car implements BeanFactoryAware,BeanNameAware,InitializingBean,Disp
     }
 
 
-    public void introduce(){
-        System.out.println("brand:"+brand+";color:"+color+";maxSpeed:"+maxSpeed);
+    public void introduce() {
+        System.out.println("brand:" + brand + ";color:" + color + ";maxSpeed:" + maxSpeed);
     }
 
     //BeanFactoryAware接口方法
@@ -54,13 +54,13 @@ public class Car implements BeanFactoryAware,BeanNameAware,InitializingBean,Disp
     }
 
     //通过<bean>的init-method属性指定的初始化方法
-    public void myInit(){
+    public void myInit() {
         System.out.println("调用init-method指定的myInit()，将maxSpeed设置为240");
         this.maxSpeed = 240;
     }
 
     //通过<bean>的destroy-method属性指定的初始化方法
-    public void myDestroy(){
+    public void myDestroy() {
         System.out.println("调用destroy-method指定的myDestroy()");
     }
 

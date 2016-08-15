@@ -15,11 +15,11 @@ public class MethodPerformance {
         this.begin = System.currentTimeMillis();
     }
 
-    public void printPerformance(){
+    public void printPerformance() {
         //获取目标类方法执行完成后的系统时间
         end = System.currentTimeMillis();
         long elapse = end - begin;
-        System.out.println(serviceMethod+"花费"+elapse+"毫秒");
+        System.out.println(serviceMethod + "花费" + elapse + "毫秒");
     }
 
 

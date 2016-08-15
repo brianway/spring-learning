@@ -12,39 +12,39 @@ import org.springframework.stereotype.Component;
 //@Scope("prototype")
 @Component
 public class Car {
-	private int maxSpeed;
-	public String brand;
-	private double price;
-	
-	public static  String  HONG_QI = "红旗";
+    private int maxSpeed;
+    public String brand;
+    private double price;
 
-	//--------get和set方法----------
-	public String getBrand() {
-		return brand;
-	}
+    public static String HONG_QI = "红旗";
 
-	public void setBrand(String brand) {
-		this.brand = brand;
-	}
+    //--------get和set方法----------
+    public String getBrand() {
+        return brand;
+    }
 
-	public int getMaxSpeed() {
-		return maxSpeed;
-	}
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
 
-	public void setMaxSpeed(int maxSpeed) {
-		this.maxSpeed = maxSpeed;
-	}
+    public int getMaxSpeed() {
+        return maxSpeed;
+    }
 
-	public double getPrice() {
-		return price;
-	}
+    public void setMaxSpeed(int maxSpeed) {
+        this.maxSpeed = maxSpeed;
+    }
 
-	public void setPrice(double price) {
-		this.price = price;
-	}
-	
-	public String toString(){
-		return "brand:"+brand+"/maxSpeed:"+maxSpeed+"/price:"+price;
-	}
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public String toString() {
+        return "brand:" + brand + "/maxSpeed:" + maxSpeed + "/price:" + price;
+    }
 
 }

@@ -7,27 +7,27 @@ import org.junit.Test;
  */
 public class DESUtilsTest {
 
-    private String[] originStr = {"root","admin","123","test","123456"};
-    private String[] encodeStr = {"NBZNo/zogYE=","9lhg6rj552U="};
+    private String[] originStr = {"root", "admin", "123", "test", "123456"};
+    private String[] encodeStr = {"NBZNo/zogYE=", "9lhg6rj552U="};
 
     @Test
-    public void testEncode(){
+    public void testEncode() {
         int index = 0;
-        for(String str: originStr){
-            System.out.println(str+":"+DESUtils.getEncryptString(str));
+        for (String str : originStr) {
+            System.out.println(str + ":" + DESUtils.getEncryptString(str));
         }
     }
 
     @Test
-    public void testDecode(){
+    public void testDecode() {
         int index = 0;
-        for(String str: encodeStr){
-            System.out.println(DESUtils.getDecryptString(str)+":"+str);
+        for (String str : encodeStr) {
+            System.out.println(DESUtils.getDecryptString(str) + ":" + str);
         }
     }
 
     @Test
-    public void testEncodeAndDecode(){
+    public void testEncodeAndDecode() {
         //testEncode();
         //testDecode();
     }

@@ -9,11 +9,11 @@ import org.springframework.beans.factory.config.BeanPostProcessor;
  * 在该类中,通过过滤条件只对car Bean进行处理,对其他Bean不管
  * 对配置文件提供的属性设置值实行进行判断和操作
  */
-public class MyBeanPostProcessor implements BeanPostProcessor{
+public class MyBeanPostProcessor implements BeanPostProcessor {
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
-        if(beanName.equals("car")){
-            Car car  = (Car)bean;
-            if(car.getColor()==null){
+        if (beanName.equals("car")) {
+            Car car = (Car) bean;
+            if (car.getColor() == null) {
                 System.out.println("调用BeanPostProcessor.postProcessBeforeInitialization()，color为空，设置为默认黑色");
                 car.setColor("黑色");
             }
@@ -22,9 +22,9 @@ public class MyBeanPostProcessor implements BeanPostProcessor{
     }
 
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
-        if(beanName.equals("car")){
-            Car car  = (Car)bean;
-            if(car.getMaxSpeed()>=200){
+        if (beanName.equals("car")) {
+            Car car = (Car) bean;
+            if (car.getMaxSpeed() >= 200) {
                 System.out.println("调用BeanPostProcessor.postProcessAfterInitialization()，将maxSpeed调整为200");
                 car.setMaxSpeed(200);
             }

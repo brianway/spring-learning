@@ -18,7 +18,7 @@ public class MoAttack {
         geli.responseAsk("墨者革离");
     }*/
 
-    private GeLi  geli;
+    private GeLi geli;
 
     public MoAttack() {
     }
@@ -33,7 +33,7 @@ public class MoAttack {
         this.geli = geli;
     }
 
-    public void cityGateAsk(){
+    public void cityGateAsk() {
         geli.responseAsk("墨者革离");
     }
 

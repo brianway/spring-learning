@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
          http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-	<bean id="car" class="com.brianway.learning.spring.ioc.attr.Car">
-		<property name="maxSpeed" value="200"/>
-		<property name="brand">
-			<value><![CDATA[红旗&CA72]]></value>
-		</property>
-		<property name="price" value="2000.00" />
-	</bean>
+    <bean id="car" class="com.brianway.learning.spring.ioc.attr.Car">
+        <property name="maxSpeed" value="200"/>
+        <property name="brand">
+            <value><![CDATA[红旗&CA72]]></value>
+        </property>
+        <property name="price" value="2000.00"/>
+    </bean>
 
-	<bean id="boss" class="com.brianway.learning.spring.ioc.attr.Boss">
-		<property name="car" ref="car" />
-		<property name="name" value="Tom" />
-		<property name="age" value="45" />
-	</bean>
+    <bean id="boss" class="com.brianway.learning.spring.ioc.attr.Boss">
+        <property name="car" ref="car"/>
+        <property name="name" value="Tom"/>
+        <property name="age" value="45"/>
+    </bean>
 
 
 </beans>

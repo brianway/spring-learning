@@ -21,16 +21,16 @@ public class TestUserService {
     private UserService userService;
 
     @Test
-    public void hasMatchUser(){
-        boolean b1 = userService.hasMatchUser("admin","123456");
-        boolean b2 = userService.hasMatchUser("admin","1111");
+    public void hasMatchUser() {
+        boolean b1 = userService.hasMatchUser("admin", "123456");
+        boolean b2 = userService.hasMatchUser("admin", "1111");
         assertTrue(b1);
         assertTrue(!b2);
     }
 
     @Test
-    public void findUserByUserName(){
+    public void findUserByUserName() {
         User user = userService.findUserByUserName("admin");
-        assertEquals(user.getUserName(),"admin");
+        assertEquals(user.getUserName(), "admin");
     }
 }

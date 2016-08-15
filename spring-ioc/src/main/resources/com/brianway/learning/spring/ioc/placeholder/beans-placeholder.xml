@@ -25,7 +25,7 @@
 
     <!--3.使用加密版的属性文件  -->
     <bean class="com.brianway.learning.spring.ioc.placeholder.EncryptPropertyPlaceholderConfigurer"
-          p:location ="classpath:com/brianway/learning/spring/ioc/placeholder/jdbc-encode.properties"
+          p:location="classpath:com/brianway/learning/spring/ioc/placeholder/jdbc-encode.properties"
           p:fileEncoding="utf-8"/>
 
     <context:component-scan base-package="com.brianway.learning.spring.ioc.placeholder"/>
@@ -35,5 +35,5 @@
           p:driverClassName="${driverClassName}"
           p:url="${url}"
           p:username="${userName}"
-          p:password="${password}" />
+          p:password="${password}"/>
 </beans>

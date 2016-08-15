@@ -21,7 +21,7 @@ public class MyDataSource {
     @Value("${password}")
     private String password;
 
-    public String toString(){
+    public String toString() {
         return ToStringBuilder.reflectionToString(this);
     }
 }
