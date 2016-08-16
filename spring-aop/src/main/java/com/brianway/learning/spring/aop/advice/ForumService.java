@@ -1,6 +1,5 @@
 package com.brianway.learning.spring.aop.advice;
 
-import java.io.Serializable;
 import java.sql.SQLException;
 
 public class ForumService {

@@ -1,8 +1,7 @@
 package com.brianway.learning.spring.ioc.example;
 
+import static org.junit.Assert.assertNull;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 /**
  * Created by Brian on 2016/5/12.

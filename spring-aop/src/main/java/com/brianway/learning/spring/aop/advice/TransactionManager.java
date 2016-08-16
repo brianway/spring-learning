@@ -1,8 +1,8 @@
 package com.brianway.learning.spring.aop.advice;
 
-import java.lang.reflect.Method;
-
 import org.springframework.aop.ThrowsAdvice;
+
+import java.lang.reflect.Method;
 
 public class TransactionManager implements ThrowsAdvice {
     public void afterThrowing(Method method, Object[] args, Object target,

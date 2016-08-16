@@ -1,10 +1,10 @@
 package com.brianway.learning.spring.ioc.annotation;
 
+import org.springframework.stereotype.Component;
+
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.annotation.Resource;
-
-import org.springframework.stereotype.Component;
 
 /**
  * 基于注解的Boss类

@@ -1,8 +1,8 @@
 package com.brianway.learning.spring.aop.advice;
 
-import java.lang.reflect.Method;
-
 import org.springframework.aop.MethodBeforeAdvice;
+
+import java.lang.reflect.Method;
 
 public class GreetingBeforeAdvice implements MethodBeforeAdvice {
     public void before(Method method, Object[] args, Object obj) throws Throwable {

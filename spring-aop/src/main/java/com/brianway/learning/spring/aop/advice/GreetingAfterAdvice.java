@@ -1,8 +1,8 @@
 package com.brianway.learning.spring.aop.advice;
 
-import java.lang.reflect.Method;
-
 import org.springframework.aop.AfterReturningAdvice;
+
+import java.lang.reflect.Method;
 
 public class GreetingAfterAdvice implements AfterReturningAdvice {
 

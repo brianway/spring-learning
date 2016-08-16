@@ -1,7 +1,6 @@
 package com.brianway.learning.spring.aop.advice;
 
 import org.junit.Test;
-import org.junit.internal.runners.statements.ExpectException;
 import org.springframework.aop.BeforeAdvice;
 import org.springframework.aop.framework.ProxyFactory;
 import org.springframework.context.ApplicationContext;
@@ -72,7 +71,7 @@ public class AdviceTest {
     }
 
     @Test(expected = Exception.class)
-    public void testThrowsAdvice() throws Exception{
+    public void testThrowsAdvice() throws Exception {
         String configPath = "com/brianway/learning/spring/aop/advice/beans-advice.xml";
         ApplicationContext context = new ClassPathXmlApplicationContext(configPath);
         ForumService forumService = (ForumService) context.getBean("forumService");
