@@ -1,14 +1,14 @@
 package com.brianway.learning.spring.aop.advice;
 
 public class Forum {
-	private int forumId;
+    private int forumId;
 
-	public int getForumId() {
-		return forumId;
-	}
+    public int getForumId() {
+        return forumId;
+    }
 
-	public void setForumId(int forumId) {
-		this.forumId = forumId;
-	}
+    public void setForumId(int forumId) {
+        this.forumId = forumId;
+    }
 
 }
