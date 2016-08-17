@@ -6,6 +6,10 @@
 
     <bean id="pmonitor" class="com.brianway.learning.spring.aop.introduce.ControllablePerformaceMonitor"/>
     <bean id="forumServiceTarget" class="com.brianway.learning.spring.aop.introduce.ForumService"/>
+    <!--
+        p:interfaces 引介增强所需实现的接口;
+        p:proxyTargetClass="true" 引介增强一定要通过创建子类来生成代理,故需强制使用CGLib
+    -->
     <bean id="forumService" class="org.springframework.aop.framework.ProxyFactoryBean"
           p:interfaces="com.brianway.learning.spring.aop.introduce.Monitorable"
           p:target-ref="forumServiceTarget"
