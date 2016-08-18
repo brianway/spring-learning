@@ -25,7 +25,7 @@ public class AspectJProxyTest {
 
     @Test
     public void testXmlAutoProxy() {
-        String configPath = "com/brianway/learning/spring/aop/aspectj/beans-aspectj.xml";
+        String configPath = "com/brianway/learning/spring/aop/aspectj/beans-example.xml";
         ApplicationContext context = new ClassPathXmlApplicationContext(configPath);
         Waiter waiter = (Waiter) context.getBean("waiter");
 
