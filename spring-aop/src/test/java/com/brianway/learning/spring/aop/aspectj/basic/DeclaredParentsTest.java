@@ -1,5 +1,7 @@
 package com.brianway.learning.spring.aop.aspectj.basic;
 
+import com.brianway.learning.spring.aop.aspectj.Seller;
+import com.brianway.learning.spring.aop.aspectj.Waiter;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

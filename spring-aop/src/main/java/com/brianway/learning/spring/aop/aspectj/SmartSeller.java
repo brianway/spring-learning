@@ -1,4 +1,4 @@
-package com.brianway.learning.spring.aop.aspectj.basic;
+package com.brianway.learning.spring.aop.aspectj;
 
 public class SmartSeller implements Seller {
 

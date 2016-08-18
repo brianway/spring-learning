@@ -1,4 +1,4 @@
-package com.brianway.learning.spring.aop.aspectj.basic;
+package com.brianway.learning.spring.aop.aspectj;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

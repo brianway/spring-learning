@@ -8,7 +8,7 @@
         http://www.springframework.org/schema/aop/spring-aop-4.2.xsd">
 
     <aop:aspectj-autoproxy/>
-    <bean id="waiter" class="com.brianway.learning.spring.aop.aspectj.basic.NaiveWaiter"/>
+    <bean id="waiter" class="com.brianway.learning.spring.aop.aspectj.NaiveWaiter"/>
     <bean class="com.brianway.learning.spring.aop.aspectj.basic.EnableSellerAspect"/>
 
 </beans>
