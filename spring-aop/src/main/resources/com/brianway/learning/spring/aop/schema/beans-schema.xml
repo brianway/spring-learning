@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop-4.2.xsd">
+    <aop:config proxy-target-class="true">
+        <aop:advisor advice-ref="testAdvice" pointcut="execution(* com..*.Waiter.greetTo(..))"/>
+
+        <aop:aspect ref="adviceMethods">
+            <aop:pointcut id="greetToPointcut"
+                          expression="target(com.brianway.learning.spring.aop.aspectj.NaiveWaiter) and execution(* greetTo(..))"/>
+            <aop:before method="preGreeting" pointcut-ref="greetToPointcut"/>
+            <!-- aop:before method="preGreeting"
+                        pointcut="target(com.brianway.learning.spring.aop.aspectj.NaiveWaiter) and args(name)"
+                        arg-names="name"/-->
+            <aop:after-returning method="afterReturning"
+                                 pointcut="target(com.brianway.learning.spring.aop.aspectj.SmartSeller)" returning="retVal"/>
+            <aop:around method="aroundMethod"
+                        pointcut="execution(* serveTo(..)) and within(com.brianway.learning.spring.aop.aspectj.Waiter)"/>
+            <aop:after-throwing method="afterThrowingMethod"
+                                pointcut="target(com.brianway.learning.spring.aop.aspectj.SmartSeller) and execution(* checkBill(..))"
+                                throwing="iae"/>
+            <aop:after method="afterMethod"
+                       pointcut="execution(* com..*.Waiter.greetTo(..))"/>
+            <aop:declare-parents
+                    implement-interface="com.brianway.learning.spring.aop.aspectj.Seller"
+                    default-impl="com.brianway.learning.spring.aop.aspectj.SmartSeller"
+                    types-matching="com.brianway.learning.spring.aop.aspectj.Waiter+"/>
+            <aop:before method="bindParams"
+                        pointcut="target(com.brianway.learning.spring.aop.aspectj.NaiveWaiter) and args(name,num,..)"/>
+        </aop:aspect>
+    </aop:config>
+
+    <bean id="testAdvice" class="com.brianway.learning.spring.aop.schema.TestBeforeAdvice"/>
+    <bean id="adviceMethods" class="com.brianway.learning.spring.aop.schema.AdviceMethods"/>
+    <bean id="naiveWaiter" class="com.brianway.learning.spring.aop.aspectj.NaiveWaiter"/>
+    <bean id="naughtyWaiter" class="com.brianway.learning.spring.aop.aspectj.NaughtyWaiter"/>
+    <bean id="seller" class="com.brianway.learning.spring.aop.aspectj.SmartSeller"/>
+
+</beans>
