@@ -38,6 +38,11 @@
             <artifactId>spring-aspects</artifactId>
         </dependency>
 
+       <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-instrument</artifactId>
+        </dependency>
+
         <!-- database -->
         <dependency>
             <groupId>mysql</groupId>
