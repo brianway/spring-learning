@@ -2,22 +2,24 @@ package com.brianway.learning.spring.mvc.web;
 
 import com.brianway.learning.spring.mvc.UserService;
 import com.brianway.learning.spring.mvc.domain.User;
+import com.brianway.learning.spring.mvc.domain.UserEditor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
-import static org.springframework.http.MediaType.IMAGE_PNG_VALUE;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.util.FileCopyUtils;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
@@ -79,7 +81,6 @@ public class UserController {
         Resource resource = new ClassPathResource("/images/hearthstone.png");
         byte[] fileOut = FileCopyUtils.copyToByteArray(resource.getInputStream());
         ResponseEntity<byte[]> responseEntity = new ResponseEntity<byte[]>(fileOut, HttpStatus.OK);
-        responseEntity.getHeaders().setContentType(MediaType.parseMediaType(IMAGE_PNG_VALUE));
         return responseEntity;
     }
 
@@ -121,7 +122,7 @@ public class UserController {
         if (user != null) {
             user.setUserId("2001");
             sessionStatus.setComplete();
-        }else{
+        } else {
             System.out.println("null userSession");
         }
         return "/user/showUser";
@@ -134,4 +135,16 @@ public class UserController {
         user.setUserName("Apple");
         return user;
     }
+
+    @RequestMapping(value = "convert")
+    public String convert(@RequestParam("user") User user, ModelMap modelMap) {
+        modelMap.put("user", user);
+        return "/user/showUser";
+    }
+
+    @InitBinder
+    public void initBinder(WebDataBinder binder) {
+        binder.registerCustomEditor(User.class, new UserEditor());
+    }
+
 }

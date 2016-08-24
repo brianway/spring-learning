@@ -15,11 +15,13 @@
         http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd">
 
     <context:component-scan base-package="com.brianway.learning.spring.mvc"/>
+    <!-- 视图前缀,后缀 -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"
           p:prefix="/WEB-INF/views/"
           p:suffix=".jsp"/>
 
-    <mvc:annotation-driven/>
+    <!--  使用 HttpMessageConverter<T> -->
+    <mvc:annotation-driven conversion-service="conversionService"/>
     <!--bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
         <property name="messageConverters">
             <list>
@@ -40,5 +42,15 @@
         <bean class="org.springframework.http.converter.StringHttpMessageConverter"/>
         <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"/>
     </util:list>
+
+    <!-- 数据转换 -->
+    <bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean">
+        <property name="converters">
+            <set>
+                <bean class="com.brianway.learning.spring.mvc.domain.StringToUserConverter"/>
+            </set>
+        </property>
+    </bean>
+
 
 </beans>
