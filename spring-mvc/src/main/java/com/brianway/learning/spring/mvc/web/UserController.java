@@ -201,10 +201,24 @@ public class UserController {
     }
 
     @RequestMapping("/userListByPdf")
-    public String ShowUserListInEPdf(ModelMap modelMap) {
+    public String ShowUserListInPdf(ModelMap modelMap) {
         List<User> users = userService.getUsers();
         modelMap.addAttribute("userList", users);
         return "userListPdf";
+    }
+
+    @RequestMapping("/userListByJson")
+    public String ShowUserListInJson(ModelMap modelMap) {
+        List<User> users = userService.getUsers();
+        modelMap.addAttribute("userList", users);
+        return "userListJson";
+    }
+
+    @RequestMapping("/userListByXml")
+    public String ShowUserListInXml(ModelMap modelMap) {
+        List<User> users = userService.getUsers();
+        modelMap.addAttribute("userList", users);
+        return "userListXml";
     }
 
 }

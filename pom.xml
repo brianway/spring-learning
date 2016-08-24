@@ -121,6 +121,12 @@
                 <version>${spring-version}</version>
             </dependency>
 
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-oxm</artifactId>
+                <version>${spring-version}</version>
+            </dependency>
+
             <!-- mybatis -->
             <dependency>
                 <groupId>org.mybatis</groupId>
@@ -252,6 +258,14 @@
                 <artifactId>itext</artifactId>
                 <version>2.1.7</version>
             </dependency>
+
+            <!-- xstream -->
+            <dependency>
+                <groupId>com.thoughtworks.xstream</groupId>
+                <artifactId>xstream</artifactId>
+                <version>1.4.9</version>
+            </dependency>
+
 
         </dependencies>
     </dependencyManagement>

@@ -87,8 +87,30 @@
 
     <!-- Excel及PDF视图解析器配置 -->
     <bean class="org.springframework.web.servlet.view.BeanNameViewResolver"
-          p:order="10" />
-    <bean id="userListExcel" class="com.brianway.learning.spring.mvc.web.UserListExcelView" />
-    <bean id="userListPdf" class="com.brianway.learning.spring.mvc.web.UserListPdfView" />
+          p:order="10"/>
+    <bean id="userListExcel" class="com.brianway.learning.spring.mvc.web.UserListExcelView"/>
+    <bean id="userListPdf" class="com.brianway.learning.spring.mvc.web.UserListPdfView"/>
+
+    <!-- XMl及JSON视图解析器配置 -->
+    <bean id="userListJson"
+          class="org.springframework.web.servlet.view.json.MappingJackson2JsonView"
+          p:modelKey="userList"/>
+
+    <bean id="userListXml"
+          class="org.springframework.web.servlet.view.xml.MarshallingView"
+          p:modelKey="userList"
+          p:marshaller-ref="xmlMarshaller"/>
+
+    <!--  XML -->
+    <bean id="xmlMarshaller" class="org.springframework.oxm.xstream.XStreamMarshaller">
+        <property name="streamDriver">
+            <bean class="com.thoughtworks.xstream.io.xml.StaxDriver"/>
+        </property>
+        <property name="annotatedClasses">
+            <list>
+                <value>com.brianway.learning.spring.mvc.domain.User</value>
+            </list>
+        </property>
+    </bean>
 
 </beans>
