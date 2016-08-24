@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	 http://www.springframework.org/schema/beans/spring-beans-4.2.xsd">
+
+    <bean id="userListJson1"
+          class="org.springframework.web.servlet.view.json.MappingJackson2JsonView"
+          p:modelKey="message"/>
+    <bean id="userListExcel1" class="com.brianway.learning.spring.mvc.web.UserListExcelView"/>
+    <bean id="userListPdf1" class="com.brianway.learning.spring.mvc.web.UserListPdfView"/>
+
+</beans>

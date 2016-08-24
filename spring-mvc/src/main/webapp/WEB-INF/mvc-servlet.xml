@@ -17,6 +17,7 @@
     <context:component-scan base-package="com.brianway.learning.spring.mvc"/>
     <!-- 视图前缀,后缀 -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+          p:order="100"
           p:viewClass="org.springframework.web.servlet.view.JstlView"
           p:prefix="/WEB-INF/views/"
           p:suffix=".jsp"/>
@@ -42,6 +43,10 @@
         <bean class="org.springframework.http.converter.ByteArrayHttpMessageConverter"/>
         <bean class="org.springframework.http.converter.StringHttpMessageConverter"/>
         <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"/>
+        <bean class="org.springframework.http.converter.xml.SourceHttpMessageConverter"/>
+        <bean class="org.springframework.http.converter.xml.MarshallingHttpMessageConverter"
+              p:marshaller-ref="xmlMarshaller" p:unmarshaller-ref="xmlMarshaller">
+        </bean>
     </util:list>
 
     <!-- 数据转换 -->
@@ -51,6 +56,18 @@
             <set>
                 <bean class="com.brianway.learning.spring.mvc.domain.StringToUserConverter"/>
             </set>
+        </property>
+    </bean>
+
+    <!--  XML -->
+    <bean id="xmlMarshaller" class="org.springframework.oxm.xstream.XStreamMarshaller">
+        <property name="streamDriver">
+            <bean class="com.thoughtworks.xstream.io.xml.StaxDriver"/>
+        </property>
+        <property name="annotatedClasses">
+            <list>
+                <value>com.brianway.learning.spring.mvc.domain.User</value>
+            </list>
         </property>
     </bean>
 
@@ -88,6 +105,7 @@
     <!-- Excel及PDF视图解析器配置 -->
     <bean class="org.springframework.web.servlet.view.BeanNameViewResolver"
           p:order="10"/>
+
     <bean id="userListExcel" class="com.brianway.learning.spring.mvc.web.UserListExcelView"/>
     <bean id="userListPdf" class="com.brianway.learning.spring.mvc.web.UserListPdfView"/>
 
@@ -101,15 +119,42 @@
           p:modelKey="userList"
           p:marshaller-ref="xmlMarshaller"/>
 
-    <!--  XML -->
-    <bean id="xmlMarshaller" class="org.springframework.oxm.xstream.XStreamMarshaller">
-        <property name="streamDriver">
-            <bean class="com.thoughtworks.xstream.io.xml.StaxDriver"/>
-        </property>
-        <property name="annotatedClasses">
+    <!-- XML文件或国际化资源文件定义视图 -->
+    <bean class="org.springframework.web.servlet.view.XmlViewResolver"
+          p:order="20"
+          p:location="/WEB-INF/views/mvc-views.xml"/>
+
+    <bean class="org.springframework.web.servlet.view.ResourceBundleViewResolver"
+          p:order="30"
+          p:basename="conf/i18n/views"/>
+
+    <!-- 协商多种视图解析器 -->
+    <bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver"
+          p:order="0"
+          p:contentNegotiationManager-ref="cnManager">
+        <property name="defaultViews">
             <list>
-                <value>com.brianway.learning.spring.mvc.domain.User</value>
+                <bean class="org.springframework.web.servlet.view.json.MappingJackson2JsonView"
+                      p:modelKey="userList"/>
+                <bean class="org.springframework.web.servlet.view.xml.MarshallingView"
+                      p:modelKey="userList"
+                      p:marshaller-ref="xmlMarshaller"/>
             </list>
+        </property>
+    </bean>
+
+    <bean id="cnManager" class="org.springframework.web.accept.ContentNegotiationManagerFactoryBean"
+          p:ignoreAcceptHeader="true"
+          p:favorPathExtension="true"
+          p:favorParameter="true"
+          p:parameterName="format"
+          p:defaultContentType="text/html">
+        <property name="mediaTypes">
+            <map>
+                <entry key="html" value="text/html"/>
+                <entry key="xml" value="application/xml"/>
+                <entry key="json" value="application/json"/>
+            </map>
         </property>
     </bean>
 

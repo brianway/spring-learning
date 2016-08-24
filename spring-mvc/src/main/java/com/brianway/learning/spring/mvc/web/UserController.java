@@ -221,4 +221,11 @@ public class UserController {
         return "userListXml";
     }
 
+    @RequestMapping("/userListMix")
+    public String ShowUserListMix(ModelMap modelMap) {
+        List<User> users = userService.getUsers();
+        modelMap.addAttribute("userList", users);
+        return "userListMix";
+    }
+
 }
