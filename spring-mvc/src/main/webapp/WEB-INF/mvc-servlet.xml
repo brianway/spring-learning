@@ -17,6 +17,7 @@
     <context:component-scan base-package="com.brianway.learning.spring.mvc"/>
     <!-- 视图前缀,后缀 -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+          p:viewClass="org.springframework.web.servlet.view.JstlView"
           p:prefix="/WEB-INF/views/"
           p:suffix=".jsp"/>
 
@@ -63,8 +64,25 @@
         <property name="basenames">
             <list>
                 <value>conf/i18n/messages</value>
+                <value>conf/i18n/content</value>
             </list>
         </property>
     </bean>
+
+    <!-- FreeMarker基础设施及视图解析器配置 -->
+    <bean class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer"
+          p:templateLoaderPath="/WEB-INF/ftl"
+          p:defaultEncoding="UTF-8">
+        <property name="freemarkerSettings">
+            <props>
+                <prop key="classic_compatible">true</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver"
+          p:order="5"
+          p:suffix=".ftl"
+          p:contentType="text/html; charset=utf-8"/>
 
 </beans>

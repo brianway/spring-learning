@@ -28,6 +28,7 @@ import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.io.IOException;
+import java.util.List;
 import javax.validation.Valid;
 
 /**
@@ -176,6 +177,20 @@ public class UserController {
         } else {
             return "/user/showUser";
         }
+    }
+
+    @RequestMapping("/userList")
+    public String ShowUserList(ModelMap modelMap) {
+        List<User> users = userService.getUsers();
+        modelMap.addAttribute("userList", users);
+        return "user/userList";
+    }
+
+    @RequestMapping("/userListByFtl")
+    public String ShowUserListInFtl(ModelMap modelMap) {
+        List<User> users = userService.getUsers();
+        modelMap.addAttribute("userList", users);
+        return "userListFtl";
     }
 
 }
