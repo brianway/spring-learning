@@ -193,4 +193,18 @@ public class UserController {
         return "userListFtl";
     }
 
+    @RequestMapping("/userListByXls")
+    public String ShowUserListInExcel(ModelMap modelMap) {
+        List<User> users = userService.getUsers();
+        modelMap.addAttribute("userList", users);
+        return "userListExcel";
+    }
+
+    @RequestMapping("/userListByPdf")
+    public String ShowUserListInEPdf(ModelMap modelMap) {
+        List<User> users = userService.getUsers();
+        modelMap.addAttribute("userList", users);
+        return "userListPdf";
+    }
+
 }

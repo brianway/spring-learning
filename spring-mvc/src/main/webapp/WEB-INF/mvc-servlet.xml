@@ -85,4 +85,10 @@
           p:suffix=".ftl"
           p:contentType="text/html; charset=utf-8"/>
 
+    <!-- Excel及PDF视图解析器配置 -->
+    <bean class="org.springframework.web.servlet.view.BeanNameViewResolver"
+          p:order="10" />
+    <bean id="userListExcel" class="com.brianway.learning.spring.mvc.web.UserListExcelView" />
+    <bean id="userListPdf" class="com.brianway.learning.spring.mvc.web.UserListPdfView" />
+
 </beans>

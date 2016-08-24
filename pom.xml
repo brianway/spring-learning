@@ -159,6 +159,13 @@
                 <version>1.7.18</version>
             </dependency>
 
+            <!-- java servlet api-->
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>servlet-api</artifactId>
+                <version>2.5</version>
+            </dependency>
+
             <!-- JSP tag -->
             <dependency>
                 <groupId>javax.servlet</groupId>
@@ -205,11 +212,17 @@
                 <version>2.9.4</version>
             </dependency>
 
-            <!-- apache common-->
+            <!-- apache common,common-lang-->
             <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-lang3</artifactId>
                 <version>3.4</version>
+            </dependency>
+
+            <dependency>
+                <groupId>commons-lang</groupId>
+                <artifactId>commons-lang</artifactId>
+                <version>2.6</version>
             </dependency>
 
             <!-- cglib -->
@@ -224,6 +237,20 @@
                 <groupId>org.freemarker</groupId>
                 <artifactId>freemarker</artifactId>
                 <version>2.3.23</version>
+            </dependency>
+
+            <!-- apache poi -->
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi</artifactId>
+                <version>3.14</version>
+            </dependency>
+
+            <!-- pdf -->
+            <dependency>
+                <groupId>com.lowagie</groupId>
+                <artifactId>itext</artifactId>
+                <version>2.1.7</version>
             </dependency>
 
         </dependencies>
