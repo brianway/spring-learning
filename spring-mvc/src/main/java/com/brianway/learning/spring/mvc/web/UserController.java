@@ -12,6 +12,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.util.FileCopyUtils;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.ValidationUtils;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -26,6 +28,7 @@ import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.io.IOException;
+import javax.validation.Valid;
 
 /**
  * Created by brian on 16/8/22.
@@ -145,10 +148,34 @@ public class UserController {
     @InitBinder
     public void initBinder(WebDataBinder binder) {
         binder.registerCustomEditor(User.class, new UserEditor());
+        binder.addValidators(new UserValidator());
     }
 
     @RequestMapping(value = "/format")
     public String format(User user) {
         return "/user/showUser";
     }
+
+    @RequestMapping(value = "/validate")
+    public String validate(@Valid @ModelAttribute("user") User user, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            return "/user/registerValidator";
+        } else {
+            return "/user/showUser";
+        }
+    }
+
+    @RequestMapping("/userValidator")
+    public String userValidator(@ModelAttribute("user") User user, BindingResult bindingResult) {
+        ValidationUtils.rejectIfEmptyOrWhitespace(bindingResult, "userName", "required");
+        if ("aaaa".equalsIgnoreCase(user.getUserName())) {
+            bindingResult.rejectValue("userName", "reserved");
+        }
+        if (bindingResult.hasErrors()) {
+            return "/user/registerUserValidator";
+        } else {
+            return "/user/showUser";
+        }
+    }
+
 }

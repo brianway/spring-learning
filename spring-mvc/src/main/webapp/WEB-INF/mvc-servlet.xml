@@ -53,5 +53,18 @@
         </property>
     </bean>
 
+    <!-- 数据校验 mvc:annotation-driven 会默认装配,无需额外配置
+    <bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean"/>
+    -->
+
+    <!--国际化资源  -->
+    <bean id="messageSource"
+          class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basenames">
+            <list>
+                <value>conf/i18n/messages</value>
+            </list>
+        </property>
+    </bean>
 
 </beans>

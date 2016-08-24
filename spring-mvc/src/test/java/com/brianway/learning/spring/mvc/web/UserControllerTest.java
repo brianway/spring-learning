@@ -39,7 +39,7 @@ public class UserControllerTest {
     public void testFormat() {
         RestTemplate restTemplate = new RestTemplate();
         MultiValueMap<String, String> form = new LinkedMultiValueMap<String, String>();
-        form.add("userId","0001");
+        form.add("userId", "0001");
         form.add("userName", "Tom");
         form.add("password", "123");
         form.add("birthday", "1992-11-25");
@@ -49,4 +49,50 @@ public class UserControllerTest {
         Assert.assertTrue(html.contains("Tom"));
         System.out.println(html);
     }
+
+    @Test
+    public void testValidateSuccess() {
+        RestTemplate restTemplate = new RestTemplate();
+        MultiValueMap<String, String> form = new LinkedMultiValueMap<String, String>();
+        form.add("userId", "0001");
+        form.add("userName", "Tony");
+        form.add("password", "123");
+        form.add("birthday", "1992-11-25");
+        form.add("salary", "4,500.00");
+        String html = restTemplate.postForObject(URL_PREFIX + "validate", form, String.class);
+        Assert.assertNotNull(html);
+        Assert.assertFalse(html.contains("user.errors"));
+        System.out.println(html);
+    }
+
+    @Test
+    public void testValidateError() {
+        RestTemplate restTemplate = new RestTemplate();
+        MultiValueMap<String, String> form = new LinkedMultiValueMap<String, String>();
+        form.add("userId", "0001");
+        form.add("userName", "No");
+        form.add("password", "123");
+        form.add("birthday", "2992-11-25");
+        form.add("salary", "900.00");
+        String html = restTemplate.postForObject(URL_PREFIX + "validate", form, String.class);
+        Assert.assertNotNull(html);
+        Assert.assertTrue(html.contains("user.errors"));
+        System.out.println(html);
+    }
+
+    @Test
+    public void testUserValidator() {
+        RestTemplate restTemplate = new RestTemplate();
+        MultiValueMap<String, String> form = new LinkedMultiValueMap<String, String>();
+        form.add("userId", "0001");
+        form.add("userName", "aaaa");
+        form.add("password", "123");
+        form.add("birthday", "1992-11-25");
+        form.add("salary", "4,500.00");
+        String html = restTemplate.postForObject(URL_PREFIX + "validate", form, String.class);
+        Assert.assertNotNull(html);
+        Assert.assertTrue(html.contains("user.errors"));
+        System.out.println(html);
+    }
+
 }

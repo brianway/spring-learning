@@ -30,6 +30,12 @@
             <artifactId>spring-webmvc</artifactId>
         </dependency>
 
+        <!-- validator -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+        </dependency>
+
         <!-- json -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>

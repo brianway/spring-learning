@@ -1,20 +1,36 @@
 package com.brianway.learning.spring.mvc.domain;
 
+import org.hibernate.validator.constraints.Length;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.NumberFormat;
 
 import java.util.Date;
+import javax.validation.constraints.DecimalMax;
+import javax.validation.constraints.DecimalMin;
+import javax.validation.constraints.Past;
+import javax.validation.constraints.Pattern;
 
 /**
  * Created by brian on 16/8/23.
  */
 public class User {
     private String userId;
+
+    @Pattern(regexp = "\\w{3,30}")
     private String userName;
+
+    @Pattern(regexp = "\\S{3,30}")
     private String password;
+
+    @Length(min = 2, max = 100)
     private String realName;
+
+    @Past
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date birthday;
+
+    @DecimalMin("1000.00")
+    @DecimalMax("10000.00")
     @NumberFormat(pattern = "#,###.###")
     private long salary;
 
