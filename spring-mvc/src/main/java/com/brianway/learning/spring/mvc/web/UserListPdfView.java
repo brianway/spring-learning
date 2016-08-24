@@ -5,11 +5,9 @@ import com.lowagie.text.Cell;
 import com.lowagie.text.Document;
 import com.lowagie.text.Element;
 import com.lowagie.text.Font;
-import static com.lowagie.text.FontFactory.TIMES_ROMAN;
 import com.lowagie.text.Phrase;
 import com.lowagie.text.Table;
 import com.lowagie.text.pdf.BaseFont;
-
 import com.lowagie.text.pdf.PdfWriter;
 import org.apache.commons.lang.time.DateFormatUtils;
 import org.springframework.web.servlet.view.document.AbstractPdfView;

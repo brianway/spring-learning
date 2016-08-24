@@ -100,23 +100,20 @@ public class UserControllerTest {
         String url = URL_PREFIX + "userListMix";
         RestTemplate restTemplate = new RestTemplate();
 
+        //默认使用jsp
         String responseJsp = restTemplate.getForObject(url, String.class);
         Assert.assertNotNull(responseJsp);
         System.out.println(responseJsp);
 
+        //根据请求参数"format"
         String responseJson = restTemplate.getForObject(url + "?format=json", String.class);
-        String responseJson2 = restTemplate.getForObject(url + ".json", String.class);
         Assert.assertNotNull(responseJson);
-        Assert.assertNotNull(responseJson2);
         System.out.println(responseJson);
-        System.out.println(responseJson2);
 
-        String responseXml = restTemplate.getForObject(url + "?format=xml", String.class);
-        String responseXml2 = restTemplate.getForObject(url + ".xml", String.class);
+        //根据文件拓展名
+        String responseXml = restTemplate.getForObject(url + ".xml", String.class);
         Assert.assertNotNull(responseXml);
-        Assert.assertNotNull(responseXml2);
         System.out.println(responseXml);
-        System.out.println(responseXml2);
     }
 
 }

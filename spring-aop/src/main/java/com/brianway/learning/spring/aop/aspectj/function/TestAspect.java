@@ -2,7 +2,6 @@ package com.brianway.learning.spring.aop.aspectj.function;
 
 import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
 
 @Aspect
 public class TestAspect {

@@ -15,9 +15,11 @@
 <body>
 <spring:bind path="user.*">
     <c:forEach var="error" items="${status.errorMessages}">
-        <B><CSS color=RED>
-            <BR><c:out value="${error}"/>
-        </CSS></B>
+        <B>
+            <CSS color=RED>
+                <BR><c:out value="${error}"/>
+            </CSS>
+        </B>
     </c:forEach>
 </spring:bind>
 
