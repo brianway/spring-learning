@@ -1,5 +1,6 @@
 package com.brianway.learning.spring.mvc.web;
 
+import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.io.Resource;
@@ -32,5 +33,20 @@ public class UserControllerTest {
         byte[] reponse = restTemplate.postForObject(URL_PREFIX + "images/{itemId}", null, byte[].class, "1");
         Resource outFile = new FileSystemResource("/Users/brian/todo/tmp/test.jpg");
         FileCopyUtils.copy(reponse, outFile.getFile());
+    }
+
+    @Test
+    public void testFormat() {
+        RestTemplate restTemplate = new RestTemplate();
+        MultiValueMap<String, String> form = new LinkedMultiValueMap<String, String>();
+        form.add("userId","0001");
+        form.add("userName", "Tom");
+        form.add("password", "123");
+        form.add("birthday", "1992-11-25");
+        form.add("salary", "4,500.00");
+        String html = restTemplate.postForObject(URL_PREFIX + "format", form, String.class);
+        Assert.assertNotNull(html);
+        Assert.assertTrue(html.contains("Tom"));
+        System.out.println(html);
     }
 }

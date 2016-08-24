@@ -36,6 +36,12 @@
             <artifactId>jackson-databind</artifactId>
         </dependency>
 
+        <!-- joda time -->
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+        </dependency>
+
         <!-- JSP tag -->
         <dependency>
             <groupId>javax.servlet</groupId>

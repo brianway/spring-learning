@@ -44,7 +44,8 @@
     </util:list>
 
     <!-- 数据转换 -->
-    <bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean">
+    <bean id="conversionService"
+          class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
         <property name="converters">
             <set>
                 <bean class="com.brianway.learning.spring.mvc.domain.StringToUserConverter"/>

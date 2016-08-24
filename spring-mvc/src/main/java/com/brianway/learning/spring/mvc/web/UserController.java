@@ -147,4 +147,8 @@ public class UserController {
         binder.registerCustomEditor(User.class, new UserEditor());
     }
 
+    @RequestMapping(value = "/format")
+    public String format(User user) {
+        return "/user/showUser";
+    }
 }
