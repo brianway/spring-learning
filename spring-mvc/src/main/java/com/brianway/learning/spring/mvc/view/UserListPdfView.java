@@ -1,4 +1,4 @@
-package com.brianway.learning.spring.mvc.web;
+package com.brianway.learning.spring.mvc.view;
 
 import com.brianway.learning.spring.mvc.domain.User;
 import com.lowagie.text.Cell;

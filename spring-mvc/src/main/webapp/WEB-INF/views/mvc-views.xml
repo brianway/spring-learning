@@ -8,7 +8,7 @@
     <bean id="userListJson1"
           class="org.springframework.web.servlet.view.json.MappingJackson2JsonView"
           p:modelKey="message"/>
-    <bean id="userListExcel1" class="com.brianway.learning.spring.mvc.web.UserListExcelView"/>
-    <bean id="userListPdf1" class="com.brianway.learning.spring.mvc.web.UserListPdfView"/>
+    <bean id="userListExcel1" class="com.brianway.learning.spring.mvc.view.UserListExcelView"/>
+    <bean id="userListPdf1" class="com.brianway.learning.spring.mvc.view.UserListPdfView"/>
 
 </beans>

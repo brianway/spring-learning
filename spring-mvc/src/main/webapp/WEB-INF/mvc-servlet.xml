@@ -106,8 +106,8 @@
     <bean class="org.springframework.web.servlet.view.BeanNameViewResolver"
           p:order="10"/>
 
-    <bean id="userListExcel" class="com.brianway.learning.spring.mvc.web.UserListExcelView"/>
-    <bean id="userListPdf" class="com.brianway.learning.spring.mvc.web.UserListPdfView"/>
+    <bean id="userListExcel" class="com.brianway.learning.spring.mvc.view.UserListExcelView"/>
+    <bean id="userListPdf" class="com.brianway.learning.spring.mvc.view.UserListPdfView"/>
 
     <!-- XMl及JSON视图解析器配置 -->
     <bean id="userListJson"

@@ -1,4 +1,4 @@
-package com.brianway.learning.spring.mvc;
+package com.brianway.learning.spring.mvc.service;
 
 import com.brianway.learning.spring.mvc.domain.User;
 import org.springframework.stereotype.Service;

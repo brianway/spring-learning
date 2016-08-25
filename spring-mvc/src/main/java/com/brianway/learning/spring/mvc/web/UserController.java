@@ -1,8 +1,8 @@
 package com.brianway.learning.spring.mvc.web;
 
-import com.brianway.learning.spring.mvc.UserService;
 import com.brianway.learning.spring.mvc.domain.User;
 import com.brianway.learning.spring.mvc.domain.UserEditor;
+import com.brianway.learning.spring.mvc.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
