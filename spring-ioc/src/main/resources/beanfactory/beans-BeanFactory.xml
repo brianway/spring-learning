@@ -5,7 +5,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="car-singleton" class="com.brianway.learning.spring.ioc.beanfactory.Car"
+    <bean id="car" class="com.brianway.learning.spring.ioc.beanfactory.Car"
           init-method="myInit"
           destroy-method="myDestroy"
           p:brand="红旗CA72"

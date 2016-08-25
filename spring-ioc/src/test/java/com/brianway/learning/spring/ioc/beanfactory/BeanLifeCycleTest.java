@@ -11,7 +11,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class BeanLifeCycleTest {
     @Test
     public void testSingleton() {
-        String beanId = "car-singleton";
+        String beanId = "car";
         BeanLifeCycle.lifeCycleInBeanFactory(beanId);
     }
 
