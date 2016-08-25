@@ -6,12 +6,14 @@ import org.springframework.beans.factory.BeanFactoryAware;
 import org.springframework.beans.factory.BeanNameAware;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
 
 /**
  * Created by Brian on 2016/5/13.
  * 实现各种生命周期控制访问的Car类
  */
-public class Car implements BeanFactoryAware, BeanNameAware, InitializingBean, DisposableBean {
+public class Car implements BeanFactoryAware, BeanNameAware, InitializingBean, DisposableBean,ApplicationContextAware {
 
     private String brand;
     private String color;
@@ -61,6 +63,13 @@ public class Car implements BeanFactoryAware, BeanNameAware, InitializingBean, D
      */
     public void afterPropertiesSet() throws Exception {
         System.out.println("调用InitializingBean.afterPropertiesSet()");
+    }
+
+    /**
+     * ApplicationContextAware 接口
+     */
+    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+        System.out.println("调用ApplicationContextAware.setApplicationContext()");
     }
 
     /**

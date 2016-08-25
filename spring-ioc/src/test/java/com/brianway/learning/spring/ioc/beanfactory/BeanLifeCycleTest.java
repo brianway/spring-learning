@@ -1,6 +1,9 @@
 package com.brianway.learning.spring.ioc.beanfactory;
 
+import com.brianway.learning.spring.ioc.reflect.*;
 import org.junit.Test;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  * Created by brian on 16/8/25.
@@ -16,6 +19,13 @@ public class BeanLifeCycleTest {
     public void testPrototype() {
         String beanId = "car-prototype";
         BeanLifeCycle.lifeCycleInBeanFactory(beanId);
+    }
+
+    @Test
+    public void testApplicationContext() {
+        ApplicationContext context = new ClassPathXmlApplicationContext("beanfactory/beans-ApplicationContext.xml");
+        Car car = (Car)context.getBean("car");
+        car.introduce();
     }
 
 }
