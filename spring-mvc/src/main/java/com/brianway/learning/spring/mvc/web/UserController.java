@@ -25,8 +25,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.List;
 import javax.validation.Valid;
@@ -41,6 +43,16 @@ public class UserController {
 
     @Autowired
     private UserService userService;
+
+    @RequestMapping(value = "/success")
+    public String success() {
+        return "success";
+    }
+
+    @RequestMapping(value = "/fail")
+    public String fail() {
+        return "fail";
+    }
 
     @RequestMapping(value = "/createUser", method = RequestMethod.POST)
     public ModelAndView createUser(@ModelAttribute("user") User user) {
@@ -228,4 +240,19 @@ public class UserController {
         return "userListMix";
     }
 
+    @RequestMapping(value = "/upload", method = RequestMethod.GET)
+    public String upload() {
+        return "uploadPage";
+    }
+
+    @RequestMapping(value = "/upload", method = RequestMethod.POST)
+    public String upload(@RequestParam("name") String name, @RequestParam("file") MultipartFile file) throws Exception {
+        if (!file.isEmpty()) {
+            String pathname = "/Users/brian/todo/tmp/" + file.getOriginalFilename();
+            file.transferTo(new File(pathname));
+            return "redirect:success";
+        } else {
+            return "redirect:fail";
+        }
+    }
 }

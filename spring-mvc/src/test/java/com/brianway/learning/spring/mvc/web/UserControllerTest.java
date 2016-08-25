@@ -116,4 +116,19 @@ public class UserControllerTest {
         System.out.println(responseXml);
     }
 
+    @Test
+    public void testLocaleResolver() {
+        String url = URL_PREFIX + "validate";
+        RestTemplate restTemplate = new RestTemplate();
+        MultiValueMap<String, String> form = new LinkedMultiValueMap<String, String>();
+
+        String responseCN = restTemplate.postForObject(url + "?locale=zh_CN", form, String.class);
+        Assert.assertNotNull(responseCN);
+        System.out.println(responseCN);
+
+        String responseUS = restTemplate.postForObject(url + "?locale=en_US", form, String.class);
+        Assert.assertNotNull(responseUS);
+        System.out.println(responseUS);
+    }
+
 }

@@ -158,4 +158,22 @@
         </property>
     </bean>
 
+    <!-- 本地化解析 -->
+    <bean id="localeResolver"
+          class="org.springframework.web.servlet.i18n.CookieLocaleResolver"
+          p:cookieName="clientLanguage"
+          p:cookieMaxAge="100000"
+          p:cookiePath="/"
+          p:defaultLocale="zh_CN"/>
+    <mvc:interceptors>
+        <bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor"/>
+    </mvc:interceptors>
+
+    <!-- 文件上传 -->
+    <bean id="multipartResolver"
+          class="org.springframework.web.multipart.commons.CommonsMultipartResolver"
+          p:defaultEncoding="UTF-8"
+          p:maxUploadSize="5000000"
+          p:uploadTempDir="upload/tmp"/>
+
 </beans>
