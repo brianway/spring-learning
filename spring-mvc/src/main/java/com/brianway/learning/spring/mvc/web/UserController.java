@@ -15,6 +15,7 @@ import org.springframework.util.FileCopyUtils;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -31,6 +32,7 @@ import org.springframework.web.servlet.ModelAndView;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 /**
@@ -255,4 +257,25 @@ public class UserController {
             return "redirect:fail";
         }
     }
+
+    @RequestMapping("/resource")
+    public String resource() {
+        return "testResource";
+    }
+
+    @RequestMapping(value = "/error")
+    public String error() {
+        return "error";
+    }
+
+    @RequestMapping("/throwException")
+    public String throwException() {
+        throw new RuntimeException("Throw a exception on purpose");
+    }
+
+    @ExceptionHandler(RuntimeException.class)
+    public String handleException(RuntimeException re, HttpServletRequest request) {
+        return "forward:/user/error";
+    }
+
 }
