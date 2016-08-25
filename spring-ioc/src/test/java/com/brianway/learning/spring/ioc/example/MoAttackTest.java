@@ -11,7 +11,7 @@ public class MoAttackTest {
 
     @Test
     public void show() {
-        ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("example/beans.xml");
+        ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("example/beans-example.xml");
         MoAttack moAttack = (MoAttack) ctx.getBean("moAttack");
         moAttack.cityGateAsk();
 

@@ -14,7 +14,7 @@ public class DESUtilsTest {
     public void testEncode() {
         int index = 0;
         for (String str : originStr) {
-            System.out.println(str + ":" + DESUtils.getEncryptString(str));
+            System.out.println("Encode: " + str + " -> " + DESUtils.getEncryptString(str));
         }
     }
 
@@ -22,14 +22,14 @@ public class DESUtilsTest {
     public void testDecode() {
         int index = 0;
         for (String str : encodeStr) {
-            System.out.println(DESUtils.getDecryptString(str) + ":" + str);
+            System.out.println("Decode: " + str + " -> " + DESUtils.getDecryptString(str));
         }
     }
 
     @Test
     public void testEncodeAndDecode() {
-        //testEncode();
-        //testDecode();
+        testEncode();
+        testDecode();
     }
 
 }

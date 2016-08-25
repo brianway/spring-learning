@@ -1,4 +1,4 @@
-package com.brianway.learning.spring.ioc.attr;
+package com.brianway.learning.spring.ioc.attribute;
 
 /**
  * attr包下的Car类

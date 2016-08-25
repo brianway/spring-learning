@@ -4,7 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
          http://www.springframework.org/schema/beans/spring-beans-4.2.xsd">
 
-    <bean id="car" class="com.brianway.learning.spring.ioc.attr.Car">
+    <bean id="car" class="com.brianway.learning.spring.ioc.attribute.Car">
         <property name="maxSpeed" value="200"/>
         <property name="brand">
             <value><![CDATA[红旗&CA72]]></value>
@@ -12,7 +12,7 @@
         <property name="price" value="2000.00"/>
     </bean>
 
-    <bean id="boss" class="com.brianway.learning.spring.ioc.attr.Boss">
+    <bean id="boss" class="com.brianway.learning.spring.ioc.attribute.Boss">
         <property name="car" ref="car"/>
         <property name="name" value="Tom"/>
         <property name="age" value="45"/>

@@ -4,13 +4,13 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
          http://www.springframework.org/schema/beans/spring-beans-4.2.xsd">
 
-    <bean id="car" class="com.brianway.learning.spring.ioc.attr.Car">
+    <bean id="car" class="com.brianway.learning.spring.ioc.attribute.Car">
         <property name="brand" value="吉利CT5"/>
         <property name="maxSpeed" value="100"/>
         <property name="price" value="1000.00"/>
     </bean>
 
-    <bean id="boss" class="com.brianway.learning.spring.ioc.attr.Boss">
+    <bean id="boss" class="com.brianway.learning.spring.ioc.attribute.Boss">
         <property name="car">
             <ref parent="car"/>
         </property>

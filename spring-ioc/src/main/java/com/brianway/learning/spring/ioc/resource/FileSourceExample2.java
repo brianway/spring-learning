@@ -7,7 +7,7 @@ import org.springframework.util.FileCopyUtils;
 
 /**
  * Created by Brian on 2016/5/12.
- * <p>
+ *
  * EncodedResource
  */
 public class FileSourceExample2 {
@@ -16,6 +16,5 @@ public class FileSourceExample2 {
         EncodedResource encodedRes = new EncodedResource(res, "UTF-8");
         String content = FileCopyUtils.copyToString(encodedRes.getReader());
         System.out.println(content);
-
     }
 }

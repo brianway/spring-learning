@@ -4,7 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
          http://www.springframework.org/schema/beans/spring-beans-4.2.xsd">
 
-    <bean id="car" class="com.brianway.learning.spring.ioc.attr.Car" lazy-init="default">
+    <bean id="car" class="com.brianway.learning.spring.ioc.attribute.Car" lazy-init="default">
         <property name="brand">
             <value>
                 <![CDATA[红旗&CA72]]>
@@ -15,7 +15,7 @@
     </bean>
 
     <bean id="parentBoss" abstract="true"
-          class="com.brianway.learning.spring.ioc.attr.Boss">
+          class="com.brianway.learning.spring.ioc.attribute.Boss">
         <property name="favorites">
             <set>
                 <value>看报</value>
@@ -35,7 +35,7 @@
     </bean>
 
     <!-- 引用Bean -->
-    <bean id="boss1" class="com.brianway.learning.spring.ioc.attr.Boss">
+    <bean id="boss1" class="com.brianway.learning.spring.ioc.attribute.Boss">
         <property name="car" ref="car"/>
         <!-- set -->
         <property name="favorites">
@@ -73,9 +73,9 @@
     </bean>
 
     <!-- 内部Bean -->
-    <bean id="boss2" class="com.brianway.learning.spring.ioc.attr.Boss">
+    <bean id="boss2" class="com.brianway.learning.spring.ioc.attribute.Boss">
         <property name="car">
-            <bean class="com.brianway.learning.spring.ioc.attr.Car">
+            <bean class="com.brianway.learning.spring.ioc.attribute.Car">
                 <property name="maxSpeed" value="202"/>
                 <property name="price" value="2002.00"/>
             </bean>
@@ -83,7 +83,7 @@
     </bean>
 
     <!--
-        <bean id="sportsCar" class="com.brianway.learning.spring.ioc.attr.SportsCar">
+        <bean id="sportsCar" class="com.brianway.learning.spring.ioc.attributeibute.SportsCar">
             <property name="brand">
                 <bean id="car.brand"
                     class="org.springframework.beans.factory.config.PropertyPathFactoryBean">
@@ -102,7 +102,7 @@
         <bean id="myField"
             class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean">
             <property name="staticField"
-                value="com.brianway.learning.spring.ioc.attr.Car.HONG_QI" />
+                value="com.brianway.learning.spring.ioc.attributeibute.Car.HONG_QI" />
             <property name="targetObject" ref="car"/>
             <property name="targetField" value="brand"/>
         </bean>

@@ -1,4 +1,4 @@
-package com.brianway.learning.spring.ioc.attr;
+package com.brianway.learning.spring.ioc.attribute;
 
 public class SportsCar {
     private String brand;

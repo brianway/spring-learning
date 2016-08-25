@@ -10,8 +10,7 @@
           destroy-method="myDestroy"
           p:brand="红旗CA72"
           p:maxSpeed="200"
-          scope="singleton"
-    />
+          scope="singleton"/>
 
     <bean id="myBeanPostProcessor" class="com.brianway.learning.spring.ioc.context.MyBeanPostProcessor"/>
 

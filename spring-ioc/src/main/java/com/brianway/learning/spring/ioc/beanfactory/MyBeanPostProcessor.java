@@ -5,8 +5,8 @@ import org.springframework.beans.factory.config.BeanPostProcessor;
 
 /**
  * Created by Brian on 2016/5/13.
- * BeanPostProcessor实现类
- * 在该类中,通过过滤条件只对car Bean进行处理,对其他Bean不管
+ * BeanPostProcessor 实现类
+ * 在该类中,通过过滤条件只对 car Bean 进行处理,对其他 Bean 不管
  * 对配置文件提供的属性设置值实行进行判断和操作
  */
 public class MyBeanPostProcessor implements BeanPostProcessor {

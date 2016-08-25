@@ -7,7 +7,7 @@ public class Director {
     /**
      * 通过构造函数注入革离扮演者
      */
-    public void direct_constructor() {
+    public void directConstructor() {
         GeLi geli = new LiuDeHua();
         MoAttack moAttack = new MoAttack(geli);
         moAttack.cityGateAsk();
@@ -16,7 +16,7 @@ public class Director {
     /**
      * 通过setter方法注入革离扮演者
      */
-    public void direct_setter() {
+    public void directSetter() {
         GeLi geli = new LiuDeHua();
         MoAttack moAttack = new MoAttack();
         moAttack.setGeli(geli);

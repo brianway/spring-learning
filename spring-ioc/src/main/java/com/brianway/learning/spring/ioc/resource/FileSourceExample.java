@@ -36,6 +36,5 @@ public class FileSourceExample {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 }

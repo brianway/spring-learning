@@ -22,6 +22,5 @@ public class PrivateCarReflect {
         //取消语言检查访问protected方法
         driveMtd.setAccessible(true);
         driveMtd.invoke(privateCar);
-
     }
 }
