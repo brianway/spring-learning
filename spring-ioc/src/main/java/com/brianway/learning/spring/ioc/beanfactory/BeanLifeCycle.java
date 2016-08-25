@@ -8,14 +8,14 @@ import org.springframework.core.io.Resource;
 
 /**
  * Created by Brian on 2016/5/13.
- * 该类装载的Bean的xml配置文件:beanfactory/beans-BeanFactory.xml
+ * 该类装载的Bean的xml配置文件:com/brianway/learning/spring/ioc/beanfactory/beans-singleton.xml
  * 分别注册两个后处理器:MyBeanPostProcessor 和 MyInstantiationAwareBeanPostProcessor
  * (后处理器的实际调用顺序和注册顺序无关)
  */
 public class BeanLifeCycle {
-    public static void lifeCycleInBeanFactory(String beanId) {
+    public static void lifeCycleInBeanFactory(String xmlPath,String beanId) {
         //装载配置文件并启动容器
-        Resource res = new ClassPathResource("beanfactory/beans-BeanFactory.xml");
+        Resource res = new ClassPathResource(xmlPath);
         BeanFactory bf = new XmlBeanFactory(res);
 
         //向容器中注册MyBeanPostProcessor后处理器
@@ -28,6 +28,7 @@ public class BeanLifeCycle {
         car1.introduce();
         car1.setColor("红色");
 
+        System.out.println("第二次从容器中获取car");
         //第二次从容器中获取car，若为 singleton,直接从缓存池获取
         Car car2 = (Car) bf.getBean(beanId);
 

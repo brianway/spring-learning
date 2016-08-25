@@ -16,7 +16,7 @@ public class ApplicationContextTest {
      */
     @Test
     public void testApplicationContext() {
-        ApplicationContext context = new ClassPathXmlApplicationContext("beanfactory/beans.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("com/brianway/learning/spring/ioc/beanfactory/beans.xml");
         Car car = (Car) context.getBean("car-reflect");
         car.introduce();
     }

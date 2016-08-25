@@ -13,7 +13,7 @@ import org.springframework.context.ApplicationContextAware;
  * Created by Brian on 2016/5/13.
  * 实现各种生命周期控制访问的Car类
  */
-public class Car implements BeanFactoryAware, BeanNameAware, InitializingBean, DisposableBean,ApplicationContextAware {
+public class Car implements BeanFactoryAware, BeanNameAware, InitializingBean, DisposableBean, ApplicationContextAware {
 
     private String brand;
     private String color;

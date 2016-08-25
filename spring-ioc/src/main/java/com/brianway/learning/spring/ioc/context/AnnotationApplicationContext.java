@@ -13,6 +13,5 @@ public class AnnotationApplicationContext {
         ApplicationContext ctx = new AnnotationConfigApplicationContext(Beans.class);
         Car car = ctx.getBean("car", Car.class);
         car.introduce();
-
     }
 }

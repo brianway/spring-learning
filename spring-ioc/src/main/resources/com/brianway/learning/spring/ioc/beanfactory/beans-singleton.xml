@@ -12,10 +12,4 @@
           p:maxSpeed="200"
           scope="singleton"/>
 
-    <bean id="car-prototype" class="com.brianway.learning.spring.ioc.beanfactory.Car"
-          init-method="myInit"
-          destroy-method="myDestroy"
-          p:brand="红旗CA72"
-          p:maxSpeed="200"
-          scope="prototype"/>
 </beans>
