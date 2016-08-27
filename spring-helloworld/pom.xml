@@ -73,6 +73,12 @@
             <artifactId>slf4j-api</artifactId>
         </dependency>
 
+        <!-- java servlet api-->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+        </dependency>
+
         <!-- JSP tag -->
         <dependency>
             <groupId>javax.servlet</groupId>
