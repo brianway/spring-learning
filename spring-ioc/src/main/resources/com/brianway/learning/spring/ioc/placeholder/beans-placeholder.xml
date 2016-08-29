@@ -9,19 +9,24 @@
          http://www.springframework.org/schema/context/spring-context-4.2.xsd">
     <!--1.使用传统的PropertyPlaceholderConfigurer引用属性文件  -->
     <!--
-        bean
-        class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"
-        p:fileEncoding="utf-8"> <property name="locations"> <list>
-        <value>classpath:com/brianway/learning/spring/ioc/placeholder/jdbc.properties</value>
-        </list> </property> </bean
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"
+          p:fileEncoding="utf-8">
+        <property name="locations">
+            <list>
+                <value>classpath:com/brianway/learning/spring/ioc/placeholder/jdbc.properties</value>
+            </list>
+        </property>
+    </bean>
     -->
-
     <!--2.使用context命名空间的配置引用属性文件  -->
-    <!--context:property-placeholder
-        location="classpath:com/brianway/learning/spring/ioc/placeholder/jdbc.properties" file-encoding="utf8"/>
+    <!--
+    <context:property-placeholder
+            location="classpath:com/brianway/learning/spring/ioc/placeholder/jdbc.properties"
+            file-encoding="utf8"/>
     <bean id="utf8" class="java.lang.String">
         <constructor-arg value="utf-8"></constructor-arg>
-    </bean-->
+    </bean>
+    -->
 
     <!--3.使用加密版的属性文件  -->
     <bean class="com.brianway.learning.spring.ioc.placeholder.EncryptPropertyPlaceholderConfigurer"
