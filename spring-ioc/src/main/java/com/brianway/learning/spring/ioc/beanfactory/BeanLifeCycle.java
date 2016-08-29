@@ -13,7 +13,7 @@ import org.springframework.core.io.Resource;
  * (后处理器的实际调用顺序和注册顺序无关)
  */
 public class BeanLifeCycle {
-    public static void lifeCycleInBeanFactory(String xmlPath,String beanId) {
+    public static void lifeCycleInBeanFactory(String xmlPath, String beanId) {
         //装载配置文件并启动容器
         Resource res = new ClassPathResource(xmlPath);
         BeanFactory bf = new XmlBeanFactory(res);

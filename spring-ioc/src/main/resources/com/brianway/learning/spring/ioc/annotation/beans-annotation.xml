@@ -9,10 +9,10 @@
 >
     <context:component-scan base-package="com.brianway.learning.spring.ioc.annotation"/>
 
-    <!-- context:component-scan base-package="com.baobaotao" resource-pattern="anno/*.class"/ -->
-    <!-- context:component-scan base-package="com.baobaotao">
-        <context:include-filter type="regex" expression="com\.baobaotao\.anno.*Dao"/>
-        <context:include-filter type="regex" expression="com\.baobaotao\.anno.*Service"/>
-        <context:exclude-filter type="aspectj" expression="com.baobaotao..*Controller+"/>
-    </context:component-scan -->
+    <!-- context:component-scan base-package="com.brianway.learning.spring.ioc" resource-pattern="annotation/*.class"/ -->
+    <!--context:component-scan base-package="com.brianway.learning.spring.ioc">
+        <context:include-filter type="regex" expression="com\.brianway\.learning\.spring\.ioc\.annotation.*Dao "/>
+        <context:include-filter type="regex" expression="com\.brianway\.learning\.spring\.ioc\.annotation.*Service"/>
+        <context:exclude-filter type="aspectj" expression="com.brianway.learning.spring.ioc..*Controller+"/>
+    </context:component-scan-->
 </beans>
